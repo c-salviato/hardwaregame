@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const VEL = 150.0
+const VEL = 60.0
 
 @onready var anim = $Animacao
 
