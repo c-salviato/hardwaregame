@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwpjjstto1s2x"]
 
-[ext_resource type="Script" uid="uid://dgo3spij7wk43" path="res://cenario/color_rect.gd" id="1_51ff2"]
+[ext_resource type="Texture2D" uid="uid://dkox5lf6xqgd1" path="res://assets/sprites/cenas/lobby/sprite_cena01.png" id="1_51ff2"]
 [ext_resource type="Texture2D" uid="uid://ifsjcqicjosm" path="res://assets/sprites/player/animacoes_player.png" id="1_d6lth"]
 [ext_resource type="Script" uid="uid://ckthv0iplhm21" path="res://cenario/player.gd" id="2_b87gc"]
 
@@ -111,24 +111,84 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b87gc"]
+size = Vector2(15, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_el0s4"]
+size = Vector2(247, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51ff2"]
+size = Vector2(7.5, 191)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5nh6"]
+size = Vector2(166.5, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpre3"]
+size = Vector2(20, 81.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpnvy"]
+size = Vector2(99.5, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4to0"]
+size = Vector2(21, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwvlm"]
+size = Vector2(41, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwro"]
+size = Vector2(20, 15)
+
 [node name="Main" type="Node2D" unique_id=1229129315]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=289753600]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 1, 0, 1)
-script = ExtResource("1_51ff2")
+[node name="SpriteCena01" type="Sprite2D" parent="." unique_id=1595667187]
+position = Vector2(128, 95)
+texture = ExtResource("1_51ff2")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=682922607]
+position = Vector2(126, 90)
 script = ExtResource("2_b87gc")
 
 [node name="Animacao" type="AnimatedSprite2D" parent="Player" unique_id=299651772]
-position = Vector2(260, 150)
-scale = Vector2(1, 0.94531244)
+texture_filter = 1
+position = Vector2(5.9604645e-08, -0.9999994)
+scale = Vector2(0.9375, 0.97265625)
 sprite_frames = SubResource("SpriteFrames_80vwd")
 animation = &"andar_esq"
 
 [node name="Colisao" type="CollisionShape2D" parent="Player" unique_id=2061233470]
+shape = SubResource("RectangleShape2D_b87gc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1014752668]
+position = Vector2(-5, 47)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1731902977]
+position = Vector2(137.5, 137)
+shape = SubResource("RectangleShape2D_el0s4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=817933513]
+position = Vector2(9.25, 50)
+shape = SubResource("RectangleShape2D_51ff2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=620104067]
+position = Vector2(88, -11)
+shape = SubResource("RectangleShape2D_q5nh6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=94896707]
+position = Vector2(159, 13.1875)
+shape = SubResource("RectangleShape2D_fpre3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1406636034]
+position = Vector2(212.75, 44)
+shape = SubResource("RectangleShape2D_rpnvy")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1048051956]
+position = Vector2(262.5, 72)
+shape = SubResource("RectangleShape2D_d4to0")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=413299895]
+position = Vector2(90.5, 9)
+shape = SubResource("RectangleShape2D_pwvlm")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1917459364]
+position = Vector2(44, 8.5)
+shape = SubResource("RectangleShape2D_5wwro")
