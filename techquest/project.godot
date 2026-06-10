@@ -25,6 +25,7 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://Dialogo/": "pink",
+"res://Fases/": "gray",
 "res://assets/": "teal",
 "res://cenario/": "orange",
 "res://fontes/": "red"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djwc0ayyikopq"
-path="res://.godot/imported/spritesheet_ram.png-ed06370644ed5128c87fccd2dc47031e.ctex"
+uid="uid://b3nc0ivhjj60f"
+path="res://.godot/imported/spritesheet_mochila.png-dc0035edaeb570178d37005db9bff33c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/GUI/menu_portal/spritesheet_ram.png"
-dest_files=["res://.godot/imported/spritesheet_ram.png-ed06370644ed5128c87fccd2dc47031e.ctex"]
+source_file="res://assets/sprites/GUI/inventario/spritesheet_mochila.png"
+dest_files=["res://.godot/imported/spritesheet_mochila.png-dc0035edaeb570178d37005db9bff33c.ctex"]
 
 [params]
 

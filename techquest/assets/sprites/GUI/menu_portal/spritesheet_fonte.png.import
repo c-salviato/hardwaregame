@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c11v1ll27ri27"
-path="res://.godot/imported/spritesheet_fonte.png-869efa48fd154362bc6a2d67f715ce56.ctex"
+path="res://.godot/imported/spritesheet_fonte.png-77070604e84edd4c1b80b488d8a81312.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cenas/lobby/GUI/menu_portal/spritesheet_fonte.png"
-dest_files=["res://.godot/imported/spritesheet_fonte.png-869efa48fd154362bc6a2d67f715ce56.ctex"]
+source_file="res://assets/sprites/GUI/menu_portal/spritesheet_fonte.png"
+dest_files=["res://.godot/imported/spritesheet_fonte.png-77070604e84edd4c1b80b488d8a81312.ctex"]
 
 [params]
 
