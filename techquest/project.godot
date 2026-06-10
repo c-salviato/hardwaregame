@@ -21,6 +21,15 @@ window/size/viewport_width=256
 window/size/viewport_height=192
 window/stretch/mode="viewport"
 
+[file_customization]
+
+folder_colors={
+"res://Dialogo/": "pink",
+"res://assets/": "teal",
+"res://cenario/": "orange",
+"res://fontes/": "red"
+}
+
 [input]
 
 andar_baixo={

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dkox5lf6xqgd1" path="res://assets/sprites/cenas/lobby/sprite_cena01.png" id="1_51ff2"]
 [ext_resource type="Texture2D" uid="uid://ifsjcqicjosm" path="res://assets/sprites/player/animacoes_player.png" id="1_d6lth"]
 [ext_resource type="Script" uid="uid://ckthv0iplhm21" path="res://cenario/player.gd" id="2_b87gc"]
+[ext_resource type="FontFile" uid="uid://c3ksgjhny4rqw" path="res://fontes/bookxel.ttf" id="4_b87gc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q5nh6"]
 atlas = ExtResource("1_d6lth")
@@ -138,6 +139,12 @@ size = Vector2(41, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwro"]
 size = Vector2(20, 15)
 
+[sub_resource type="LabelSettings" id="LabelSettings_51ff2"]
+line_spacing = 0.0
+font = ExtResource("4_b87gc")
+font_size = 12
+shadow_color = Color(0.06666667, 0.4, 0.2, 1)
+
 [node name="Main" type="Node2D" unique_id=1229129315]
 
 [node name="SpriteCena01" type="Sprite2D" parent="." unique_id=1595667187]
@@ -192,3 +199,72 @@ shape = SubResource("RectangleShape2D_pwvlm")
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1917459364]
 position = Vector2(44, 8.5)
 shape = SubResource("RectangleShape2D_5wwro")
+
+[node name="BaseDialog" type="ColorRect" parent="." unique_id=687574016]
+custom_minimum_size = Vector2(256, 20)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 66.0
+offset_top = 211.0
+offset_right = 322.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Dialog" type="HBoxContainer" parent="BaseDialog" unique_id=2098939033]
+custom_minimum_size = Vector2(250, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Borda" type="ColorRect" parent="BaseDialog/Dialog" unique_id=1730629256]
+custom_minimum_size = Vector2(42, 10)
+layout_mode = 2
+
+[node name="Face" type="TextureRect" parent="BaseDialog/Dialog/Borda" unique_id=1937871008]
+custom_minimum_size = Vector2(42, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -20.0
+offset_right = 21.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ContainText" type="VBoxContainer" parent="BaseDialog/Dialog" unique_id=1317597608]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="nome" type="Label" parent="BaseDialog/Dialog/ContainText" unique_id=353743349]
+layout_mode = 2
+text = "Teste"
+label_settings = SubResource("LabelSettings_51ff2")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Dialogo" type="RichTextLabel" parent="BaseDialog/Dialog/ContainText" unique_id=643009560]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+theme_override_fonts/normal_font = ExtResource("4_b87gc")
+theme_override_font_sizes/normal_font_size = 14
