@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bfb660loc3io6"]
 
+[ext_resource type="Script" uid="uid://dfgcdg5ovt483" path="res://cenario/tela_dialogo.gd" id="1_2n4yd"]
 [ext_resource type="FontFile" uid="uid://c3ksgjhny4rqw" path="res://fontes/bookxel.ttf" id="1_p5i70"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2n4yd"]
@@ -8,13 +9,21 @@ font = ExtResource("1_p5i70")
 font_size = 12
 shadow_color = Color(0.06666667, 0.4, 0.2, 1)
 
-[node name="DialogScreen" type="Control" unique_id=1391606721]
+[node name="DialogScreen" type="Control" unique_id=1391606721 node_paths=PackedStringArray("_nome", "_dialogo", "_faceset")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2n4yd")
+_nome = NodePath("BaseDialog/Dialog/ContainText/nome")
+_dialogo = NodePath("BaseDialog/Dialog/ContainText/Dialogo")
+_faceset = NodePath("BaseDialog/Dialog/Borda/Face")
 
 [node name="BaseDialog" type="ColorRect" parent="." unique_id=1066784268]
 custom_minimum_size = Vector2(256, 20)
@@ -24,10 +33,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 46.0
-offset_top = 171.0
-offset_right = 302.0
-offset_bottom = 211.0
+offset_left = -129.0
+offset_top = -40.0
+offset_right = 127.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 0.6)
