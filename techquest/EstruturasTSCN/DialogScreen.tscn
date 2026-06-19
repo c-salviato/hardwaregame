@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfb660loc3io6"]
 
-[ext_resource type="Script" uid="uid://dfgcdg5ovt483" path="res://cenario/tela_dialogo.gd" id="1_2n4yd"]
+[ext_resource type="Script" uid="uid://dfgcdg5ovt483" path="res://scripts/dialogo/tela_dialogo.gd" id="1_2n4yd"]
 [ext_resource type="FontFile" uid="uid://c3ksgjhny4rqw" path="res://fontes/bookxel.ttf" id="1_p5i70"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2n4yd"]

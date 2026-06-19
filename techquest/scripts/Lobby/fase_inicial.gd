@@ -1,6 +1,6 @@
 extends Node2D
 class_name LevelInical
-const _DIALOG_SCREEN: PackedScene = preload("res://Dialogo/DialogScreen.tscn")
+const _DIALOG_SCREEN: PackedScene = preload("res://EstruturasTSCN/DialogScreen.tscn")
 #aqui a gente cria os diálogos
 var _dialog_data: Dictionary ={
 	0:{

@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://cwpjjstto1s2x"]
 
-[ext_resource type="Script" uid="uid://25bimjhfpwwr" path="res://Fases/fase_inicial.gd" id="1_p1far"]
+[ext_resource type="Script" uid="uid://25bimjhfpwwr" path="res://scripts/Lobby/fase_inicial.gd" id="1_p1far"]
 [ext_resource type="Texture2D" uid="uid://dkox5lf6xqgd1" path="res://assets/sprites/cenas/lobby/sprite_cena01.png" id="2_tj21c"]
-[ext_resource type="Script" uid="uid://ckthv0iplhm21" path="res://cenario/player.gd" id="3_2ipsw"]
-[ext_resource type="Texture2D" uid="uid://ifsjcqicjosm" path="res://assets/sprites/player/animacoes_player.png" id="4_xfxak"]
+[ext_resource type="Script" uid="uid://ckthv0iplhm21" path="res://scripts/player/player.gd" id="3_2ipsw"]
+[ext_resource type="Texture2D" uid="uid://ueqrbee0c2vy" path="res://assets/sprites/player/animacoes_player.png" id="4_xfxak"]
+[ext_resource type="Texture2D" uid="uid://bpcub4qjuxctx" path="res://assets/sprites/cenas/lobby/objetos_de_cena/sprite_dad.png" id="5_tj21c"]
+[ext_resource type="Texture2D" uid="uid://dyw6hurtw4bcj" path="res://assets/sprites/cenas/lobby/objetos_de_cena/spritesheet_portal.png" id="6_2ipsw"]
+[ext_resource type="Script" uid="uid://h0htxp6xebsf" path="res://scripts/Lobby/portal/portal.gd" id="6_xfxak"]
+[ext_resource type="PackedScene" uid="uid://clt28mkha8p5k" path="res://EstruturasTSCN/TelaMenu.tscn" id="7_o2tcx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q5nh6"]
 atlas = ExtResource("4_xfxak")
@@ -139,15 +143,50 @@ size = Vector2(41, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwro"]
 size = Vector2(20, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ipsw"]
+size = Vector2(14, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db4v7"]
+atlas = ExtResource("6_2ipsw")
+region = Rect2(0, 0, 26, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0w85"]
+atlas = ExtResource("6_2ipsw")
+region = Rect2(26, 0, 26, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60g38"]
+atlas = ExtResource("6_2ipsw")
+region = Rect2(52, 0, 26, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6yeg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db4v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0w85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60g38")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2tcx"]
+size = Vector2(24, 36)
+
 [node name="FaseInicial" type="Node2D" unique_id=1229129315 node_paths=PackedStringArray("_hud")]
 script = ExtResource("1_p1far")
 _hud = NodePath("HUD")
 
 [node name="SpriteCena01" type="Sprite2D" parent="." unique_id=1595667187]
-position = Vector2(128, 95)
+position = Vector2(127, 96)
 texture = ExtResource("2_tj21c")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=682922607]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=682922607 groups=["player"]]
 position = Vector2(126, 90)
 script = ExtResource("3_2ipsw")
 
@@ -197,3 +236,26 @@ position = Vector2(44, 8.5)
 shape = SubResource("RectangleShape2D_5wwro")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1122236923]
+
+[node name="Pai" type="CharacterBody2D" parent="." unique_id=607680653]
+position = Vector2(22, 124)
+wall_min_slide_angle = 0.26703537
+
+[node name="SpriteDad" type="Sprite2D" parent="Pai" unique_id=1078922849]
+texture = ExtResource("5_tj21c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pai" unique_id=719355964]
+shape = SubResource("RectangleShape2D_2ipsw")
+
+[node name="Portal" type="Area2D" parent="." unique_id=526402990]
+position = Vector2(222, 147)
+script = ExtResource("6_xfxak")
+destination_scene = ExtResource("7_o2tcx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal" unique_id=672576649]
+sprite_frames = SubResource("SpriteFrames_r6yeg")
+
+[node name="ColiPortal" type="CollisionShape2D" parent="Portal" unique_id=1559382659]
+shape = SubResource("RectangleShape2D_o2tcx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Portal" unique_id=1034233893]

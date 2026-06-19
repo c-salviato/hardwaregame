@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		_id+=1
 		#mata o objeto do dialogo
-		if _id == data.size():
+		if _id == data.size():	
 			queue_free()
 			return
 			
@@ -44,4 +44,4 @@ func _inicia_dialogo() -> void:
 		#cria o temporizador, pra ficar mostrando a msg dependendo do tempo (step)
 		await get_tree().create_timer(_step).timeout
 		_dialogo.visible_characters +=1
-		pass
+		
