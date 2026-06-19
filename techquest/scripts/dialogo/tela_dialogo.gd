@@ -18,12 +18,12 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	#se apertar enter e o dialogo n estiver 100% visivel, a gente diminue o tempo do step pra acelerar
-	if Input.is_action_just_pressed("ui_accept") and _dialogo.visible_ratio <1:
+	if Input.is_action_just_pressed("interagir") and _dialogo.visible_ratio <1:
 		_step = 0.01
 		return
 	_step = 0.05
 	#pula pro próximo diálogo
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("interagir"):
 		_id+=1
 		#mata o objeto do dialogo
 		if _id == data.size():	

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkox5lf6xqgd1" path="res://assets/sprites/cenas/lobby/sprite_cena01.png" id="2_tj21c"]
 [ext_resource type="Script" uid="uid://ckthv0iplhm21" path="res://scripts/player/player.gd" id="3_2ipsw"]
 [ext_resource type="Texture2D" uid="uid://ueqrbee0c2vy" path="res://assets/sprites/player/animacoes_player.png" id="4_xfxak"]
+[ext_resource type="Script" uid="uid://jvtwt43dyje8" path="res://scripts/dialogo/dialogoPai.gd" id="5_db4v7"]
 [ext_resource type="Texture2D" uid="uid://bpcub4qjuxctx" path="res://assets/sprites/cenas/lobby/objetos_de_cena/sprite_dad.png" id="5_tj21c"]
 [ext_resource type="Texture2D" uid="uid://dyw6hurtw4bcj" path="res://assets/sprites/cenas/lobby/objetos_de_cena/spritesheet_portal.png" id="6_2ipsw"]
 [ext_resource type="Script" uid="uid://h0htxp6xebsf" path="res://scripts/Lobby/portal/portal.gd" id="6_xfxak"]
@@ -144,7 +145,10 @@ size = Vector2(41, 50)
 size = Vector2(20, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ipsw"]
-size = Vector2(14, 28)
+size = Vector2(31, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_db4v7"]
+size = Vector2(16, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_db4v7"]
 atlas = ExtResource("6_2ipsw")
@@ -176,11 +180,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2tcx"]
-size = Vector2(24, 36)
+size = Vector2(43, 45)
 
-[node name="FaseInicial" type="Node2D" unique_id=1229129315 node_paths=PackedStringArray("_hud")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0w85"]
+size = Vector2(24, 35)
+
+[node name="FaseInicial" type="Node2D" unique_id=1229129315]
 script = ExtResource("1_p1far")
-_hud = NodePath("HUD")
 
 [node name="SpriteCena01" type="Sprite2D" parent="." unique_id=1595667187]
 position = Vector2(127, 96)
@@ -201,7 +207,7 @@ animation = &"andar_esq"
 shape = SubResource("RectangleShape2D_b87gc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1014752668]
-position = Vector2(-5, 47)
+position = Vector2(-7, 48)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1731902977]
 position = Vector2(137.5, 137)
@@ -235,17 +241,26 @@ shape = SubResource("RectangleShape2D_pwvlm")
 position = Vector2(44, 8.5)
 shape = SubResource("RectangleShape2D_5wwro")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1122236923]
+[node name="Pai" type="Area2D" parent="." unique_id=1380738822]
+position = Vector2(18, 126)
+script = ExtResource("5_db4v7")
 
-[node name="Pai" type="CharacterBody2D" parent="." unique_id=607680653]
-position = Vector2(22, 124)
-wall_min_slide_angle = 0.26703537
+[node name="ColiInteracaoPai" type="CollisionShape2D" parent="Pai" unique_id=719355964]
+position = Vector2(8.5, -9)
+shape = SubResource("RectangleShape2D_2ipsw")
 
 [node name="SpriteDad" type="Sprite2D" parent="Pai" unique_id=1078922849]
+position = Vector2(1, -1)
 texture = ExtResource("5_tj21c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pai" unique_id=719355964]
-shape = SubResource("RectangleShape2D_2ipsw")
+[node name="HUD" type="CanvasLayer" parent="Pai" unique_id=1122236923]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Pai" unique_id=822534450]
+position = Vector2(-4, 2)
+
+[node name="ColiPai" type="CollisionShape2D" parent="Pai/StaticBody2D" unique_id=1197584582]
+position = Vector2(5, -3)
+shape = SubResource("RectangleShape2D_db4v7")
 
 [node name="Portal" type="Area2D" parent="." unique_id=526402990]
 position = Vector2(222, 147)
@@ -255,7 +270,14 @@ destination_scene = ExtResource("7_o2tcx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal" unique_id=672576649]
 sprite_frames = SubResource("SpriteFrames_r6yeg")
 
-[node name="ColiPortal" type="CollisionShape2D" parent="Portal" unique_id=1559382659]
+[node name="ColiInteracaoPortal" type="CollisionShape2D" parent="Portal" unique_id=1559382659]
+position = Vector2(-9.5, 2.5)
 shape = SubResource("RectangleShape2D_o2tcx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Portal" unique_id=1034233893]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Portal" unique_id=537202385]
+
+[node name="ColisaoPortal" type="CollisionShape2D" parent="Portal/StaticBody2D" unique_id=1239168261]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_n0w85")
