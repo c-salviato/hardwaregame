@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://dfckt2laid5rm"
+path="res://.godot/imported/GoldPeaberry.fnt-9bb2713e495868b8947d175ba88871a4.fontdata"
+
+[deps]
+
+source_file="res://fontes/Peaberry-Font-v2.0/Peaberry-Font-v2.0/Peaberry Bitmap Fonts/6. GoldPeaberry/GoldPeaberry.fnt (XML)/GoldPeaberry.fnt"
+dest_files=["res://.godot/imported/GoldPeaberry.fnt-9bb2713e495868b8947d175ba88871a4.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

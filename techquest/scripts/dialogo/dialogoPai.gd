@@ -7,7 +7,7 @@ const DIALOG_SCREEN = preload("res://EstruturasTSCN/DialogScreen.tscn")
 
 var dialog_data = {
 	0:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/player/player_portraits/player_surpreso.png",
 		"dialog": "Papai, o que é isso?",
 		"title": "Filho"
 	},
@@ -47,7 +47,7 @@ var dialog_data = {
 		"title": "Pai"
 	},
 	8:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/player/player_portraits/player_normal.png",
 		"dialog": "Uau! Isso é muito legal.",
 		"title": "Filho"
 	},
@@ -67,7 +67,7 @@ var dialog_data = {
 		"title": "Pai"
 	},
 	12:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/player/player_portraits/player_feliz.png",
 		"dialog": "Pode deixar comigo, papai!",
 		"title": "Filho"
 	}

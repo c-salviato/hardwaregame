@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bqdny8jvc4voa"
+path="res://.godot/imported/WhitePeaberry.fnt-37a002bf3c8c0baee1ca2bfdf4f54901.fontdata"
+
+[deps]
+
+source_file="res://fontes/Peaberry-Font-v2.0/Peaberry-Font-v2.0/Peaberry Bitmap Fonts/1. WhitePeaberry/WhitePeaberry.fnt (XML)/WhitePeaberry.fnt"
+dest_files=["res://.godot/imported/WhitePeaberry.fnt-37a002bf3c8c0baee1ca2bfdf4f54901.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
