@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://clt28mkha8p5k"]
+
+[ext_resource type="Texture2D" uid="uid://egut84k7bvyt" path="res://assets/sprites/GUI/menu_portal/spritesheet_motherboard.png" id="1_li2s8"]
+[ext_resource type="Script" uid="uid://cla2b22ungiwo" path="res://scripts/Lobby/SelecaoFase.gd" id="1_we6hv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we6hv"]
+atlas = ExtResource("1_li2s8")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yugpj"]
+atlas = ExtResource("1_li2s8")
+region = Rect2(11, 0, 11, 13)
+
+[node name="CenaMenu" type="Control" unique_id=2027621362]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_we6hv")
+
+[node name="FundoMenu" type="ColorRect" parent="." unique_id=1507258044]
+custom_minimum_size = Vector2(256, 20)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -129.0
+offset_top = -40.0
+offset_right = 127.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.6)
+
+[node name="CenterContainer" type="CenterContainer" parent="FundoMenu" unique_id=633620215]
+layout_mode = 0
+offset_right = 257.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="FundoMenu/CenterContainer" unique_id=184240137]
+light_mask = 0
+visibility_layer = 63
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 12
+columns = 6
+
+[node name="Fase1" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=1089925437]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_we6hv")
+texture_hover = SubResource("AtlasTexture_yugpj")
+
+[node name="Fase2" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=1979786911]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_we6hv")
+texture_hover = SubResource("AtlasTexture_yugpj")
+
+[node name="Fase3" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=1994629405]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_we6hv")
+texture_hover = SubResource("AtlasTexture_yugpj")
+
+[node name="Fase4" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=822438700]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_we6hv")
+texture_hover = SubResource("AtlasTexture_yugpj")
+
+[node name="Fase5" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=1825818279]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_we6hv")
+texture_hover = SubResource("AtlasTexture_yugpj")
+
+[node name="Fase6" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=551006871]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_we6hv")
+texture_hover = SubResource("AtlasTexture_yugpj")
