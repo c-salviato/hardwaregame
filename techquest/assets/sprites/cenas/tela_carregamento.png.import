@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpcub4qjuxctx"
-path="res://.godot/imported/sprite_dad.png-7cfb7189849ece16cf9f7d074f245dee.ctex"
+uid="uid://bogvvijpolkyv"
+path="res://.godot/imported/tela_carregamento.png-e499792811acb6ff18a469ba347ab01e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cenas/lobby/objetos_de_cena/sprite_dad.png"
-dest_files=["res://.godot/imported/sprite_dad.png-7cfb7189849ece16cf9f7d074f245dee.ctex"]
+source_file="res://assets/sprites/cenas/tela_carregamento.png"
+dest_files=["res://.godot/imported/tela_carregamento.png-e499792811acb6ff18a469ba347ab01e.ctex"]
 
 [params]
 

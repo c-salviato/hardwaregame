@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doo71n2i0cf8o"
-path="res://.godot/imported/sprite_gabinete.png-48acce50d7d0444b16d5069073ebf3dc.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://d2c2sw15cg585"
+valid=false
 
 [deps]
 
-source_file="res://assets/sprites/cenas/lobby/objetos_de_cena/sprite_gabinete.png"
-dest_files=["res://.godot/imported/sprite_gabinete.png-48acce50d7d0444b16d5069073ebf3dc.ctex"]
+source_file="res://fontes/Peaberry-Font-v2.0/__MACOSX/Peaberry-Font-v2.0/Peaberry Bitmap Fonts/3. IndigoPeaberry/._IndigoPeaberry-demo.png"
 
 [params]
 
