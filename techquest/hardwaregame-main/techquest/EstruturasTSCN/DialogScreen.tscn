@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bfb660loc3io6"]
+
+[ext_resource type="Script" uid="uid://dfgcdg5ovt483" path="res://scripts/dialogo/tela_dialogo.gd" id="1_gb7we"]
+[ext_resource type="FontFile" uid="uid://c3ksgjhny4rqw" path="res://fontes/bookxel.ttf" id="2_d2lsx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2n4yd"]
+line_spacing = 0.0
+font = ExtResource("2_d2lsx")
+font_size = 12
+shadow_color = Color(0.06666667, 0.4, 0.2, 1)
+
+[node name="DialogScreen" type="Control" unique_id=1391606721 node_paths=PackedStringArray("_nome", "_dialogo", "_faceset")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gb7we")
+_nome = NodePath("BaseDialog/Dialog/ContainText/nome")
+_dialogo = NodePath("BaseDialog/Dialog/ContainText/Dialogo")
+_faceset = NodePath("BaseDialog/Dialog/Borda/Face")
+
+[node name="BaseDialog" type="ColorRect" parent="." unique_id=1066784268]
+custom_minimum_size = Vector2(256, 20)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -129.0
+offset_top = -40.0
+offset_right = 127.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Dialog" type="HBoxContainer" parent="BaseDialog" unique_id=2127880282]
+custom_minimum_size = Vector2(250, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Borda" type="ColorRect" parent="BaseDialog/Dialog" unique_id=1554538746]
+custom_minimum_size = Vector2(42, 10)
+layout_mode = 2
+
+[node name="Face" type="TextureRect" parent="BaseDialog/Dialog/Borda" unique_id=1545442083]
+custom_minimum_size = Vector2(42, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -20.0
+offset_right = 21.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ContainText" type="VBoxContainer" parent="BaseDialog/Dialog" unique_id=1643434271]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="nome" type="Label" parent="BaseDialog/Dialog/ContainText" unique_id=439734508]
+layout_mode = 2
+text = "Teste"
+label_settings = SubResource("LabelSettings_2n4yd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Dialogo" type="RichTextLabel" parent="BaseDialog/Dialog/ContainText" unique_id=190544947]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+theme_override_fonts/normal_font = ExtResource("2_d2lsx")
+theme_override_font_sizes/normal_font_size = 14
+text = "ssasasassas"
