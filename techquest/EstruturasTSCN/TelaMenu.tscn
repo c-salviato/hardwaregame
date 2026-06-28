@@ -2,16 +2,62 @@
 
 [ext_resource type="Texture2D" uid="uid://egut84k7bvyt" path="res://assets/sprites/GUI/menu_portal/spritesheet_motherboard.png" id="1_li2s8"]
 [ext_resource type="Script" uid="uid://cla2b22ungiwo" path="res://scripts/Lobby/SelecaoFase.gd" id="1_we6hv"]
+[ext_resource type="Texture2D" uid="uid://cf4r6v5bybqgl" path="res://assets/sprites/GUI/menu_portal/spritesheet_cpu.png" id="3_1kx0o"]
+[ext_resource type="Texture2D" uid="uid://djwc0ayyikopq" path="res://assets/sprites/GUI/menu_portal/spritesheet_ram.png" id="4_ktko6"]
+[ext_resource type="Texture2D" uid="uid://dehnkv50ydnia" path="res://assets/sprites/GUI/menu_portal/spritesheet_hd.png" id="5_g3jpu"]
+[ext_resource type="Texture2D" uid="uid://c11v1ll27ri27" path="res://assets/sprites/GUI/menu_portal/spritesheet_fonte.png" id="6_mkwn0"]
+[ext_resource type="Texture2D" uid="uid://ddxx3813wed8p" path="res://assets/sprites/GUI/menu_portal/spritesheet_gpu.png" id="7_ju0bl"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_we6hv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kx0o"]
 atlas = ExtResource("1_li2s8")
 region = Rect2(0, 0, 11, 0)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yugpj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktko6"]
 atlas = ExtResource("1_li2s8")
 region = Rect2(11, 0, 11, 13)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5el8l"]
+atlas = ExtResource("3_1kx0o")
+region = Rect2(0.011123657, -0.020211935, 14.000578, 14.036198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucijy"]
+atlas = ExtResource("3_1kx0o")
+region = Rect2(13.982777, -0.004478097, 14.039759, 14.021599)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3jpu"]
+atlas = ExtResource("4_ktko6")
+region = Rect2(-0.018100262, -0.01850605, 12.035379, 11.028951)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkwn0"]
+atlas = ExtResource("4_ktko6")
+region = Rect2(12.015026, 0, 12.024145, 11.015989)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju0bl"]
+atlas = ExtResource("5_g3jpu")
+region = Rect2(-0.01368928, -0.0066580772, 10.026859, 12.013708)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k155k"]
+atlas = ExtResource("5_g3jpu")
+region = Rect2(10.021036, -0.006714821, 10.033651, 12.041422)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6skh"]
+atlas = ExtResource("6_mkwn0")
+region = Rect2(0.015038013, -0.052749872, 12.0156555, 10.02984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldos8"]
+atlas = ExtResource("6_mkwn0")
+region = Rect2(12.003286, 0, 12.039885, 10.028258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we6hv"]
+atlas = ExtResource("7_ju0bl")
+region = Rect2(-0.0016958714, 0.03404236, 12.069424, 10.01852)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yugpj"]
+atlas = ExtResource("7_ju0bl")
+region = Rect2(12.03014, 0, 12.026897, 10.0031395)
+
 [node name="CenaMenu" type="Control" unique_id=2027621362]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,28 +96,28 @@ columns = 6
 
 [node name="Fase1" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=1089925437]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_we6hv")
-texture_hover = SubResource("AtlasTexture_yugpj")
+texture_normal = SubResource("AtlasTexture_1kx0o")
+texture_hover = SubResource("AtlasTexture_ktko6")
 
 [node name="Fase2" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=1979786911]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_we6hv")
-texture_hover = SubResource("AtlasTexture_yugpj")
+texture_normal = SubResource("AtlasTexture_5el8l")
+texture_hover = SubResource("AtlasTexture_ucijy")
 
 [node name="Fase3" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=1994629405]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_we6hv")
-texture_hover = SubResource("AtlasTexture_yugpj")
+texture_normal = SubResource("AtlasTexture_g3jpu")
+texture_hover = SubResource("AtlasTexture_mkwn0")
 
 [node name="Fase4" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=822438700]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_we6hv")
-texture_hover = SubResource("AtlasTexture_yugpj")
+texture_normal = SubResource("AtlasTexture_ju0bl")
+texture_hover = SubResource("AtlasTexture_k155k")
 
 [node name="Fase5" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=1825818279]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_we6hv")
-texture_hover = SubResource("AtlasTexture_yugpj")
+texture_normal = SubResource("AtlasTexture_u6skh")
+texture_hover = SubResource("AtlasTexture_ldos8")
 
 [node name="Fase6" type="TextureButton" parent="FundoMenu/CenterContainer/GridContainer" unique_id=551006871]
 layout_mode = 2

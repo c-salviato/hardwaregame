@@ -7,10 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://biepdwsbvyufr" path="res://assets/sprites/cenas/level01/NPCs/velho/velho_idle_right.png" id="5_s2ir7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pep1"]
-size = Vector2(107, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hym0u"]
-size = Vector2(99, 20)
+size = Vector2(259.00586, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4h3w"]
 size = Vector2(99.375, 57)
@@ -23,15 +20,6 @@ size = Vector2(6, 117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvphc"]
 size = Vector2(8, 116)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruxot"]
-size = Vector2(16.5, 23)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqa7j"]
-size = Vector2(17, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahj24"]
-size = Vector2(11, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q5nh6"]
 atlas = ExtResource("3_qqa7j")
@@ -149,82 +137,68 @@ size = Vector2(30, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l856o"]
 size = Vector2(20, 22)
 
-[node name="RuaLevel01" type="Sprite2D" unique_id=1348962123]
+[node name="Level01" type="Node2D" unique_id=1451669669]
+
+[node name="RuaLevel01" type="Sprite2D" parent="." unique_id=1348962123]
 position = Vector2(127, 95)
 texture = ExtResource("1_n6sch")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=305208619]
+[node name="StaticBody2D" type="StaticBody2D" parent="RuaLevel01" unique_id=305208619]
 position = Vector2(1, 13)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1825609520]
-position = Vector2(-76.505844, -56)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RuaLevel01/StaticBody2D" unique_id=1825609520]
+position = Vector2(-0.50292206, -56)
 shape = SubResource("RectangleShape2D_5pep1")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=732894583]
-position = Vector2(76.494156, -56)
-shape = SubResource("RectangleShape2D_hym0u")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=834705552]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RuaLevel01/StaticBody2D" unique_id=834705552]
 position = Vector2(-76.625, 19.5)
 shape = SubResource("RectangleShape2D_x4h3w")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=782975404]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="RuaLevel01/StaticBody2D" unique_id=782975404]
 position = Vector2(84, 19)
 shape = SubResource("RectangleShape2D_x4h3w")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1135423508]
-position = Vector2(1, 86)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RuaLevel01/StaticBody2D" unique_id=1135423508]
+position = Vector2(0, 86)
 shape = SubResource("RectangleShape2D_chua2")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1895575924]
-position = Vector2(-132.50584, 26)
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="RuaLevel01/StaticBody2D" unique_id=1895575924]
+position = Vector2(-132, 26)
 shape = SubResource("RectangleShape2D_gjko5")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=2005521314]
-position = Vector2(129.49416, 24)
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="RuaLevel01/StaticBody2D" unique_id=2005521314]
+position = Vector2(131.00002, 25)
 shape = SubResource("RectangleShape2D_kvphc")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=26631713]
-position = Vector2(-12.505844, -68)
-shape = SubResource("RectangleShape2D_ruxot")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1809078951]
-position = Vector2(17.494156, -67)
-shape = SubResource("RectangleShape2D_qqa7j")
-
-[node name="ColliInteraçãoPorta" type="CollisionShape2D" parent="StaticBody2D" unique_id=1090004768]
-position = Vector2(2.494156, -69)
-shape = SubResource("RectangleShape2D_ahj24")
-
-[node name="Player" type="CharacterBody2D" parent="." unique_id=108751483 groups=["player"]]
+[node name="Player" type="CharacterBody2D" parent="RuaLevel01" unique_id=108751483 groups=["player"]]
 position = Vector2(97, 77)
 script = ExtResource("2_ruxot")
 
-[node name="Animacao" type="AnimatedSprite2D" parent="Player" unique_id=1818760181]
+[node name="Animacao" type="AnimatedSprite2D" parent="RuaLevel01/Player" unique_id=1818760181]
 texture_filter = 1
 position = Vector2(0, 4.172325e-07)
 scale = Vector2(0.9375, 0.97265625)
 sprite_frames = SubResource("SpriteFrames_ahj24")
 animation = &"andar_baixo"
 
-[node name="Colisao" type="CollisionShape2D" parent="Player" unique_id=630563540]
+[node name="Colisao" type="CollisionShape2D" parent="RuaLevel01/Player" unique_id=630563540]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_teea1")
 
-[node name="Senhor" type="Area2D" parent="." unique_id=150864904]
+[node name="Senhor" type="Area2D" parent="RuaLevel01" unique_id=150864904]
 position = Vector2(-18, 80)
 script = ExtResource("4_l856o")
 
-[node name="ColiInteraVelho" type="CollisionShape2D" parent="Senhor" unique_id=481341823]
+[node name="ColiInteraVelho" type="CollisionShape2D" parent="RuaLevel01/Senhor" unique_id=481341823]
 position = Vector2(6, -0.5)
 shape = SubResource("RectangleShape2D_pp2iw")
 
-[node name="VelhoIdleRight" type="Sprite2D" parent="Senhor" unique_id=2083891912]
+[node name="VelhoIdleRight" type="Sprite2D" parent="RuaLevel01/Senhor" unique_id=2083891912]
 texture = ExtResource("5_s2ir7")
 
-[node name="HUD" type="CanvasLayer" parent="Senhor" unique_id=272367715]
+[node name="HUD" type="CanvasLayer" parent="RuaLevel01/Senhor" unique_id=272367715]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Senhor" unique_id=1070204891]
+[node name="StaticBody2D" type="StaticBody2D" parent="RuaLevel01/Senhor" unique_id=1070204891]
 
-[node name="ColiVelho" type="CollisionShape2D" parent="Senhor/StaticBody2D" unique_id=738544213]
+[node name="ColiVelho" type="CollisionShape2D" parent="RuaLevel01/Senhor/StaticBody2D" unique_id=738544213]
 shape = SubResource("RectangleShape2D_l856o")
