@@ -8,69 +8,24 @@ const DIALOG_SCREEN = preload("res://EstruturasTSCN/DialogScreen.tscn")
 var dialog_data = {
 	0:{
 		"faceset": "res://icon.svg",
-		"dialog": "Papai, o que é isso?",
-		"title": "Filho"
+		"dialog": "Olá, pequeno herói!",
+		"title": "Senhor"
 	},
 	1:{
 		"faceset": "res://icon.svg",
-		"dialog": "Isso é um gabinete, filho.",
-		"title": "Pai"
+		"dialog": "Eu preciso atravessar a rua",
+		"title": "Senhor"
 	},
 	2:{
 		"faceset": "res://icon.svg",
-		"dialog": "É aqui que ficam as peças do computador",
-		"title": "Pai"
+		"dialog": "mas estou com medo desses carros.",
+		"title": "Senhor"
 	},
 	3:{
 		"faceset": "res://icon.svg",
-		"dialog": "Cada peça tem uma função importante.",
-		"title": "Pai"
+		"dialog": "Você pode me ajudar?",
+		"title": "Senhor"
 	},
-	4:{
-		"faceset": "res://icon.svg",
-		"dialog": "Algumas ajudam o computador a funcionar",
-		"title": "Pai"
-	},
-	5:{
-		"faceset": "res://icon.svg",
-		"dialog": "já outras guardam informações",
-		"title": "Pai"
-	},
-	6:{
-		"faceset": "res://icon.svg",
-		"dialog": "e algumas fazem as imagens aparecerem na tela.",
-		"title": "Pai"
-	},
-	7:{
-		"faceset": "res://icon.svg",
-		"dialog": "Quando todas estão juntas, o computador funciona",
-		"title": "Pai"
-	},
-	8:{
-		"faceset": "res://icon.svg",
-		"dialog": "Uau! Isso é muito legal.",
-		"title": "Filho"
-	},
-	9:{
-		"faceset": "res://icon.svg",
-		"dialog": "É sim! Mas ainda faltam algumas peças.",
-		"title": "Pai"
-	},
-	10:{
-		"faceset": "res://icon.svg",
-		"dialog": "Preciso da sua ajuda para resolver mistérios",
-		"title": "Pai"
-	},
-	11:{
-		"faceset": "res://icon.svg",
-		"dialog": "e encontrá-las para montar o computador.",
-		"title": "Pai"
-	},
-	12:{
-		"faceset": "res://icon.svg",
-		"dialog": "Pode deixar comigo, papai!",
-		"title": "Filho"
-	}
 }
 
 var player_perto := false

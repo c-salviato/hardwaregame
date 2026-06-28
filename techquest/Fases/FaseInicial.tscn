@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://ueqrbee0c2vy" path="res://assets/sprites/player/animacoes_player.png" id="4_xfxak"]
 [ext_resource type="Script" uid="uid://jvtwt43dyje8" path="res://scripts/Lobby/dialogoPai.gd" id="5_db4v7"]
 [ext_resource type="Texture2D" uid="uid://bpcub4qjuxctx" path="res://assets/sprites/cenas/lobby/NPCs/sprite_dad.png" id="5_tj21c"]
-[ext_resource type="Texture2D" uid="uid://dyw6hurtw4bcj" path="res://assets/sprites/cenas/lobby/objetos_de_cena/spritesheet_portal.png" id="6_2ipsw"]
 [ext_resource type="Script" uid="uid://h0htxp6xebsf" path="res://scripts/Lobby/portal/portal.gd" id="6_xfxak"]
 [ext_resource type="PackedScene" uid="uid://clt28mkha8p5k" path="res://EstruturasTSCN/TelaMenu.tscn" id="7_o2tcx"]
+[ext_resource type="Texture2D" uid="uid://b7cxefjp4kurd" path="res://assets/sprites/cenas/lobby/objetos_de_cena/spritesheet_portal_novo.png" id="9_db4v7"]
+[ext_resource type="Script" uid="uid://bro51eyxaio01" path="res://Fases/gabinete.gd" id="10_60g38"]
+[ext_resource type="Texture2D" uid="uid://chqkhl1nfjguq" path="res://assets/sprites/cenas/lobby/objetos_de_cena/gabinete.png" id="11_r6yeg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q5nh6"]
 atlas = ExtResource("4_xfxak")
@@ -150,29 +152,50 @@ size = Vector2(31, 44)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_db4v7"]
 size = Vector2(16, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_db4v7"]
-atlas = ExtResource("6_2ipsw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0w85"]
+atlas = ExtResource("9_db4v7")
 region = Rect2(0, 0, 26, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0w85"]
-atlas = ExtResource("6_2ipsw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_60g38"]
+atlas = ExtResource("9_db4v7")
 region = Rect2(26, 0, 26, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_60g38"]
-atlas = ExtResource("6_2ipsw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6yeg"]
+atlas = ExtResource("9_db4v7")
 region = Rect2(52, 0, 26, 38)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_r6yeg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7nry"]
+atlas = ExtResource("9_db4v7")
+region = Rect2(78, 0, 26, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kox7p"]
+atlas = ExtResource("9_db4v7")
+region = Rect2(104, 0, 26, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tdcu"]
+atlas = ExtResource("9_db4v7")
+region = Rect2(130, 0, 26, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q8vad"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_db4v7")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n0w85")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_60g38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6yeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7nry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kox7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tdcu")
 }],
 "loop": true,
 "name": &"default",
@@ -185,6 +208,12 @@ size = Vector2(43, 45)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0w85"]
 size = Vector2(24, 35)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60g38"]
+size = Vector2(43, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7nry"]
+size = Vector2(33, 26)
+
 [node name="FaseInicial" type="Node2D" unique_id=1229129315]
 script = ExtResource("1_p1far")
 
@@ -193,7 +222,7 @@ position = Vector2(127, 96)
 texture = ExtResource("2_tj21c")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=682922607 groups=["player"]]
-position = Vector2(126, 90)
+position = Vector2(138, 136)
 script = ExtResource("3_2ipsw")
 
 [node name="Animacao" type="AnimatedSprite2D" parent="Player" unique_id=299651772]
@@ -241,9 +270,10 @@ shape = SubResource("RectangleShape2D_pwvlm")
 position = Vector2(44, 8.5)
 shape = SubResource("RectangleShape2D_5wwro")
 
-[node name="Pai" type="Area2D" parent="." unique_id=1380738822]
+[node name="Pai" type="Area2D" parent="." unique_id=1380738822 node_paths=PackedStringArray("portal_da_fase")]
 position = Vector2(18, 126)
 script = ExtResource("5_db4v7")
+portal_da_fase = NodePath("../Portal")
 
 [node name="ColiInteracaoPai" type="CollisionShape2D" parent="Pai" unique_id=719355964]
 position = Vector2(8.5, -9)
@@ -268,7 +298,8 @@ script = ExtResource("6_xfxak")
 destination_scene = ExtResource("7_o2tcx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal" unique_id=672576649]
-sprite_frames = SubResource("SpriteFrames_r6yeg")
+sprite_frames = SubResource("SpriteFrames_q8vad")
+frame_progress = 0.123504095
 
 [node name="ColiInteracaoPortal" type="CollisionShape2D" parent="Portal" unique_id=1559382659]
 position = Vector2(-9.5, 2.5)
@@ -281,3 +312,22 @@ shape = SubResource("RectangleShape2D_o2tcx")
 [node name="ColisaoPortal" type="CollisionShape2D" parent="Portal/StaticBody2D" unique_id=1239168261]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_n0w85")
+
+[node name="Gabinete" type="Area2D" parent="." unique_id=507510958]
+position = Vector2(26, 154)
+script = ExtResource("10_60g38")
+
+[node name="ColiInteracaoGabinete" type="CollisionShape2D" parent="Gabinete" unique_id=2027744164]
+position = Vector2(5.5, 1)
+shape = SubResource("RectangleShape2D_60g38")
+
+[node name="SpriteGabinete" type="Sprite2D" parent="Gabinete" unique_id=614570812]
+texture = ExtResource("11_r6yeg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Gabinete" unique_id=1187207444]
+
+[node name="ColiGabinete" type="CollisionShape2D" parent="Gabinete/StaticBody2D" unique_id=835487081]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_e7nry")
+
+[node name="HUD" type="CanvasLayer" parent="Gabinete" unique_id=1608953144]

@@ -3,7 +3,7 @@ extends Control
 # lista com o caminho de cada cena de fase na ordem
 # ajusta os caminhos conforme seus arquivos
 @export var fases: Array[String] = [
-	"res://cenario/Fase1.tscn",
+	"res://Fases/Level_01.tscn",
 	#"res://cenario/Fase2.tscn",
 	#"res://cenario/Fase3.tscn",
 	#"res://cenario/Fase4.tscn",
@@ -24,4 +24,5 @@ func _ready():
 # chamada quando qualquer botão de fase for clicado
 func _on_fase_selecionada(indice: int):
 	# usa o índice pra pegar o caminho certo na lista e trocar de cena
+	get_tree().paused = false
 	get_tree().change_scene_to_file(fases[indice])
