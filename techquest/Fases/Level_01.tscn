@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ueqrbee0c2vy" path="res://assets/sprites/player/animacoes_player.png" id="3_qqa7j"]
 [ext_resource type="Script" uid="uid://dxk3s8orgq55y" path="res://scripts/Fase1/DialogoSenhor.gd" id="4_l856o"]
 [ext_resource type="Texture2D" uid="uid://biepdwsbvyufr" path="res://assets/sprites/cenas/level01/NPCs/velho/velho_idle_right.png" id="5_s2ir7"]
+[ext_resource type="Script" uid="uid://dpnwjk04fg6fh" path="res://scripts/Fase1/TrafficManager.gd" id="6_traffic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pep1"]
 size = Vector2(259.00586, 20)
@@ -137,11 +138,24 @@ size = Vector2(30, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l856o"]
 size = Vector2(20, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_barrier"]
+size = Vector2(40, 60)
+
 [node name="Level01" type="Node2D" unique_id=1451669669]
 
 [node name="RuaLevel01" type="Sprite2D" parent="." unique_id=1348962123]
 position = Vector2(127, 95)
 texture = ExtResource("1_n6sch")
+
+[node name="TrafficManager" type="Node2D" parent="." unique_id="TrafficManager"]
+script = ExtResource("6_traffic")
+
+[node name="CrosswalkBarrier" type="StaticBody2D" parent="." unique_id="CrosswalkBarrier"]
+position = Vector2(127, 125)
+collision_layer = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrosswalkBarrier"]
+shape = SubResource("RectangleShape2D_barrier")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RuaLevel01" unique_id=305208619]
 position = Vector2(1, 13)

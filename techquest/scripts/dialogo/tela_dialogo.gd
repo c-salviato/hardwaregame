@@ -7,6 +7,7 @@ var _step: float = 0.05
 #identicar qual é o diálogo q estamos buscando para pular
 var _id: int=0
 var  data: Dictionary = {}
+var _is_typing: bool = false
 
 @export_category("Objetcs")
 @export var _nome: Label = null
@@ -14,34 +15,47 @@ var  data: Dictionary = {}
 @export var _faceset: TextureRect = null
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().paused = true
 	_inicia_dialogo()
-	
-func _process(delta: float) -> void:
-	#se apertar enter e o dialogo n estiver 100% visivel, a gente diminue o tempo do step pra acelerar
-	if Input.is_action_just_pressed("interagir") and _dialogo.visible_ratio <1:
-		_step = 0.01
-		return
-	_step = 0.05
-	#pula pro próximo diálogo
+
+func _exit_tree() -> void:
+	get_tree().paused = false
+
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interagir"):
-		_id+=1
-		#mata o objeto do dialogo
-		if _id == data.size():	
-			queue_free()
-			return
-			
-		_inicia_dialogo()
+		if _is_typing:
+			# Se estiver escrevendo, pula para o final do texto atual
+			_dialogo.visible_ratio = 1
+			_is_typing = false
+		else:
+			# Se já terminou de escrever, passa para o próximo diálogo
+			_proximo_dialogo()
+
+func _proximo_dialogo() -> void:
+	_id += 1
+	if _id == data.size():	
+		queue_free()
+		return
+	_inicia_dialogo()
 
 func _inicia_dialogo() -> void:
 	_nome.text = data[_id]["title"]
-	_dialogo.text= data[_id]["dialog"]
+	_dialogo.text = data[_id]["dialog"]
 	_faceset.texture = load(data[_id]["faceset"])
 	
-	#limpa os caracteres q tão aparecendo
-	_dialogo.visible_characters=0
-	#enquanto o dialogo não estiver 100% mostrado
-	while _dialogo.visible_ratio <1:
-		#cria o temporizador, pra ficar mostrando a msg dependendo do tempo (step)
+	_dialogo.visible_characters = 0
+	_is_typing = true
+	
+	# Loop para mostrar os caracteres um por um
+	while _dialogo.visible_ratio < 1:
+		if not _is_typing: # Interrompido pelo clique
+			break
 		await get_tree().create_timer(_step).timeout
-		_dialogo.visible_characters +=1
+		if not is_inside_tree(): # Prevenção de erro se o node for deletado
+			return
+		_dialogo.visible_characters += 1
+	
+	_dialogo.visible_ratio = 1 # Garante que está 100% visível
+	_is_typing = false
 		

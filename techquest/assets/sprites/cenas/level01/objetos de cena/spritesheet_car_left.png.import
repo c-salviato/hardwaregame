@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq3pnvqursb8"
-path="res://.godot/imported/spritesheet_car.png-139d2153246e482a00e9205b510f90aa.ctex"
+path="res://.godot/imported/spritesheet_car_left.png-087e17a1e552577b663abb36f39f001f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cenas/level01/objetos de cena/spritesheet_car.png"
-dest_files=["res://.godot/imported/spritesheet_car.png-139d2153246e482a00e9205b510f90aa.ctex"]
+source_file="res://assets/sprites/cenas/level01/objetos de cena/spritesheet_car_left.png"
+dest_files=["res://.godot/imported/spritesheet_car_left.png-087e17a1e552577b663abb36f39f001f.ctex"]
 
 [params]
 
