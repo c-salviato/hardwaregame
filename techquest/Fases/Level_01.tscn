@@ -147,16 +147,6 @@ size = Vector2(40, 60)
 position = Vector2(127, 95)
 texture = ExtResource("1_n6sch")
 
-[node name="TrafficManager" type="Node2D" parent="." unique_id="TrafficManager"]
-script = ExtResource("6_traffic")
-
-[node name="CrosswalkBarrier" type="StaticBody2D" parent="." unique_id="CrosswalkBarrier"]
-position = Vector2(127, 125)
-collision_layer = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CrosswalkBarrier"]
-shape = SubResource("RectangleShape2D_barrier")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="RuaLevel01" unique_id=305208619]
 position = Vector2(1, 13)
 
@@ -216,3 +206,12 @@ texture = ExtResource("5_s2ir7")
 
 [node name="ColiVelho" type="CollisionShape2D" parent="RuaLevel01/Senhor/StaticBody2D" unique_id=738544213]
 shape = SubResource("RectangleShape2D_l856o")
+
+[node name="TrafficManager" type="Node2D" parent="." unique_id=1112935022]
+script = ExtResource("6_traffic")
+
+[node name="CrosswalkBarrier" type="StaticBody2D" parent="." unique_id=1625670128]
+position = Vector2(127, 125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrosswalkBarrier" unique_id=2010012778]
+shape = SubResource("RectangleShape2D_barrier")

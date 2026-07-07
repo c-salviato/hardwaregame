@@ -8,3 +8,6 @@ var pecas_colocadas: int = 0
 
 # Guarda se a primeira conversa com o pai já foi concluída (começa como falso)
 var dialogo_pai_feito: bool = false
+
+# Itens específicos coletados
+var tem_placa_mae: bool = false
