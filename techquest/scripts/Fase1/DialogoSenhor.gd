@@ -1,91 +1,91 @@
 extends Area2D
 
 const DIALOG_SCREEN = preload("res://EstruturasTSCN/DialogScreen.tscn")
+const MINIGAME_LOGICA = preload("res://Fases/MinigameLogica.tscn")
 
+const SPRITE_IDLE_UP = preload("res://assets/sprites/cenas/level01/NPCs/velho/velho_idle_up.png")
+const SPRITE_WALK_UP_1 = preload("res://assets/sprites/cenas/level01/NPCs/velho/velho_walk_up_01.png")
+const SPRITE_WALK_UP_2 = preload("res://assets/sprites/cenas/level01/NPCs/velho/velho_walk_up_02.png")
+const SPRITE_IDLE_RIGHT = preload("res://assets/sprites/cenas/level01/NPCs/velho/velho_idle_right.png")
 
-@onready var hud = $HUD
-#precisa mudar pro dialogo certo
+@onready var hud: CanvasLayer = $HUD
+@onready var sprite: Sprite2D = $VelhoIdleRight
+@onready var collision_body: StaticBody2D = $StaticBody2D
+
 var dialog_data = {
 	0:{
 		"faceset": "res://icon.svg",
-		"dialog": "Papai, o que é isso?",
-		"title": "Filho"
+		"dialog": "Olá, pequeno herói!",
+		"title": "Senhor"
 	},
 	1:{
 		"faceset": "res://icon.svg",
-		"dialog": "Isso é um gabinete, filho.",
-		"title": "Pai"
+		"dialog": "Eu preciso atravessar a rua",
+		"title": "Senhor"
 	},
 	2:{
 		"faceset": "res://icon.svg",
-		"dialog": "É aqui que ficam as peças do computador",
-		"title": "Pai"
+		"dialog": "mas estou com medo desses carros.",
+		"title": "Senhor"
 	},
 	3:{
 		"faceset": "res://icon.svg",
-		"dialog": "Cada peça tem uma função importante.",
-		"title": "Pai"
+		"dialog": "Você pode me ajudar?",
+		"title": "Senhor"
 	},
-	4:{
+}
+
+var win_dialog = {
+	0:{
 		"faceset": "res://icon.svg",
-		"dialog": "Algumas ajudam o computador a funcionar",
-		"title": "Pai"
+		"dialog": "Parabéns! Você acertou. Realmente não há carros passando agora.",
+		"title": "Senhor"
+	}
+}
+
+var lose_dialog = {
+	0:{
+		"faceset": "res://icon.svg",
+		"dialog": "Ops, acho que você se enganou no conector lógico. Tente novamente!",
+		"title": "Senhor"
+	}
+}
+
+var thanks_dialog = {
+	0:{
+		"faceset": "res://icon.svg",
+		"dialog": "Muito obrigado por me ajudar a atravessar!",
+		"title": "Senhor"
 	},
-	5:{
+	1:{
 		"faceset": "res://icon.svg",
-		"dialog": "já outras guardam informações",
-		"title": "Pai"
+		"dialog": "Como agradecimento, tome esta Placa Mãe para o seu computador.",
+		"title": "Senhor"
 	},
-	6:{
+	2:{
 		"faceset": "res://icon.svg",
-		"dialog": "e algumas fazem as imagens aparecerem na tela.",
-		"title": "Pai"
-	},
-	7:{
-		"faceset": "res://icon.svg",
-		"dialog": "Quando todas estão juntas, o computador funciona",
-		"title": "Pai"
-	},
-	8:{
-		"faceset": "res://icon.svg",
-		"dialog": "Uau! Isso é muito legal.",
-		"title": "Filho"
-	},
-	9:{
-		"faceset": "res://icon.svg",
-		"dialog": "É sim! Mas ainda faltam algumas peças.",
-		"title": "Pai"
-	},
-	10:{
-		"faceset": "res://icon.svg",
-		"dialog": "Preciso da sua ajuda para resolver mistérios",
-		"title": "Pai"
-	},
-	11:{
-		"faceset": "res://icon.svg",
-		"dialog": "e encontrá-las para montar o computador.",
-		"title": "Pai"
-	},
-	12:{
-		"faceset": "res://icon.svg",
-		"dialog": "Pode deixar comigo, papai!",
-		"title": "Filho"
+		"dialog": "Boa sorte na sua jornada!",
+		"title": "Senhor"
 	}
 }
 
 var player_perto := false
-var dialogo_ativo = null
+var dialogo_ativo: Node = null
+var esta_atravessando := false
+var atravessou_com_sucesso := false
+var tempo_animacao := 0.0
+var walk_speed := 10.0
+var target_y := 75.0 # Posição do outro lado da calçada (global)
 
-func _ready():
-	#casos de teste no terminal pra testar caso de erro
-	print("VO:", self)
-	print("Senhor parent:", get_parent())
-	print("HUD:", hud)
-
+func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
-func _process(_delta):
+func _process(delta: float) -> void:
+	if esta_atravessando:
+		_process_walk(delta)
+		return
+
 	if !player_perto:
 		return
 
@@ -93,19 +93,96 @@ func _process(_delta):
 		return
 
 	if Input.is_action_just_pressed("interagir"):
-		dialogo_ativo = DIALOG_SCREEN.instantiate()
-		dialogo_ativo.data = dialog_data
+		if atravessou_com_sucesso:
+			_iniciar_dialogo_agradecimento()
+		else:
+			_iniciar_dialogo_inicial()
 
-		dialogo_ativo.tree_exited.connect(func():
-			dialogo_ativo = null
-		)
+func _iniciar_dialogo_inicial() -> void:
+	dialogo_ativo = DIALOG_SCREEN.instantiate()
+	dialogo_ativo.data = dialog_data
+	dialogo_ativo.tree_exited.connect(_on_dialog_finished)
+	hud.add_child(dialogo_ativo)
 
-		hud.add_child(dialogo_ativo)
+func _iniciar_dialogo_agradecimento() -> void:
+	dialogo_ativo = DIALOG_SCREEN.instantiate()
+	dialogo_ativo.data = thanks_dialog
+	dialogo_ativo.tree_exited.connect(_on_thanks_finished)
+	hud.add_child(dialogo_ativo)
 
-func _on_body_entered(body):
+func _on_thanks_finished() -> void:
+	dialogo_ativo = null
+	Global.tem_placa_mae = true
+	Global.pecas_coletadas += 1
+	# Usa o sistema de carregamento do Global se disponível, ou volta direto
+	if Global.has_method("carregar_fase"):
+		Global.carregar_fase("res://Fases/FaseInicial.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Fases/FaseInicial.tscn")
+
+func _process_walk(delta: float) -> void:
+	tempo_animacao += delta
+	
+	# Movimento para cima
+	global_position.y -= walk_speed * delta
+	
+	# Alternância de animação (0.2s por frame)
+	if int(tempo_animacao * 6) % 2 == 0:
+		sprite.texture = SPRITE_WALK_UP_1
+	else:
+		sprite.texture = SPRITE_WALK_UP_2
+		
+	# Chegou ao destino?
+	if global_position.y <= target_y:
+		global_position.y = target_y
+		esta_atravessando = false
+		atravessou_com_sucesso = true
+		sprite.texture = SPRITE_IDLE_RIGHT
+		# Reativa colisão no destino para permitir interação
+		if collision_body:
+			collision_body.process_mode = Node.PROCESS_MODE_INHERIT
+
+func _on_dialog_finished() -> void:
+	dialogo_ativo = null
+	# Inicia o minigame após o diálogo inicial
+	var minigame: Control = MINIGAME_LOGICA.instantiate()
+	minigame.finished.connect(_on_minigame_finished)
+	hud.add_child(minigame)
+
+func _on_minigame_finished(success: bool) -> void:
+	if success:
+		# Notifica o TrafficManager e remove a barreira
+		var level: Node2D = get_tree().current_scene as Node2D
+		if level.has_node("TrafficManager"):
+			level.get_node("TrafficManager").stop_spawning()
+		if level.has_node("CrosswalkBarrier"):
+			level.get_node("CrosswalkBarrier").queue_free()
+
+	var result_dialog = win_dialog if success else lose_dialog
+	dialogo_ativo = DIALOG_SCREEN.instantiate()
+	dialogo_ativo.data = result_dialog
+	dialogo_ativo.tree_exited.connect(func():
+		dialogo_ativo = null
+		if success:
+			_iniciar_travessia()
+	)
+	hud.add_child(dialogo_ativo)
+
+func _iniciar_travessia() -> void:
+	# Desativa colisão para não prender o player ou ser empurrado
+	if collision_body:
+		collision_body.process_mode = Node.PROCESS_MODE_DISABLED
+		
+	sprite.texture = SPRITE_IDLE_UP
+	# Pequeno delay de 1 segundo antes de começar a andar para mostrar o idle_up
+	await get_tree().create_timer(1.0).timeout
+	esta_atravessando = true
+	tempo_animacao = 0.0
+
+func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player_perto = true
 
-func _on_body_exited(body):
+func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		player_perto = false

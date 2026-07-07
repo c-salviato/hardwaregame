@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dg2l3i8w4y6n1"]
+
+[ext_resource type="Script" uid="uid://feu4ch5tmmmi" path="res://scripts/TelaCarregamento.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bogvvijpolkyv" path="res://assets/sprites/cenas/tela_carregamento.png" id="2_jughc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gebc"]
+atlas = ExtResource("2_jughc")
+region = Rect2(0, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kenjp"]
+atlas = ExtResource("2_jughc")
+region = Rect2(256, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_infda"]
+atlas = ExtResource("2_jughc")
+region = Rect2(512, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4se1"]
+atlas = ExtResource("2_jughc")
+region = Rect2(768, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imspj"]
+atlas = ExtResource("2_jughc")
+region = Rect2(1024, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g62b2"]
+atlas = ExtResource("2_jughc")
+region = Rect2(1280, 0, 256, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_loading"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gebc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kenjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_infda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4se1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imspj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g62b2")
+}],
+"loop": true,
+"name": &"loading",
+"speed": 8.0
+}]
+
+[node name="TelaCarregamento" type="Control" unique_id=101734129]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=509722633]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=620459701]
+position = Vector2(128, 96)
+sprite_frames = SubResource("SpriteFrames_loading")
+animation = &"loading"
+frame_progress = 0.5
+
+[node name="IconePeca" type="Sprite2D" parent="." unique_id=507482253]
+position = Vector2(169, 96)

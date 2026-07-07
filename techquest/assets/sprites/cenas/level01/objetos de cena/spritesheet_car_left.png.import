@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyw6hurtw4bcj"
-path="res://.godot/imported/spritesheet_portal.png-eede869d64415bab2f3e32128ef60747.ctex"
+uid="uid://bq3pnvqursb8"
+path="res://.godot/imported/spritesheet_car_left.png-087e17a1e552577b663abb36f39f001f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cenas/lobby/objetos_de_cena/spritesheet_portal.png"
-dest_files=["res://.godot/imported/spritesheet_portal.png-eede869d64415bab2f3e32128ef60747.ctex"]
+source_file="res://assets/sprites/cenas/level01/objetos de cena/spritesheet_car_left.png"
+dest_files=["res://.godot/imported/spritesheet_car_left.png-087e17a1e552577b663abb36f39f001f.ctex"]
 
 [params]
 

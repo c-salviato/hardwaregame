@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq3pnvqursb8"
-path="res://.godot/imported/spritesheet_car.png-139d2153246e482a00e9205b510f90aa.ctex"
+uid="uid://c57to3p85bjy4"
+path="res://.godot/imported/arvore.png-e25e9b05b2c699a3a3eb746ccea460ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cenas/level01/objetos de cena/spritesheet_car.png"
-dest_files=["res://.godot/imported/spritesheet_car.png-139d2153246e482a00e9205b510f90aa.ctex"]
+source_file="res://assets/sprites/cenas/level02/objetos de cena/arvore.png"
+dest_files=["res://.godot/imported/arvore.png-e25e9b05b2c699a3a3eb746ccea460ab.ctex"]
 
 [params]
 
