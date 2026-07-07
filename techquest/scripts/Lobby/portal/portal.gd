@@ -15,10 +15,15 @@ func _ready():
 	sprite_portal.play("default")
 	set_process_input(true)
 	
-	# Esconde o portal visualmente
-	hide() 
-	# Desativa toda a física e processamento dele (desliga as colisões e o script)
-	process_mode = Node.PROCESS_MODE_DISABLED
+	# Verifica se o portal deve estar ativo ao carregar a cena
+	if Global.dialogo_pai_feito:
+		show()
+		process_mode = Node.PROCESS_MODE_INHERIT
+	else:
+		# Esconde o portal visualmente
+		hide() 
+		# Desativa toda a física e processamento dele (desliga as colisões e o script)
+		process_mode = Node.PROCESS_MODE_DISABLED
 
 #toda essa função é pra quando tiver a fase conectada
 func _process(_delta):
