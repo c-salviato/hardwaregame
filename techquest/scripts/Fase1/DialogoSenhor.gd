@@ -10,8 +10,8 @@ const SPRITE_IDLE_RIGHT = preload("res://assets/sprites/cenas/level01/NPCs/velho
 
 @onready var hud: CanvasLayer = $HUD
 @onready var sprite: Sprite2D = $VelhoIdleRight
+@onready var collision_body: StaticBody2D = $StaticBody2D
 
-#precisa mudar pro dialogo certo
 var dialog_data = {
 	0:{
 		"faceset": "res://icon.svg",
@@ -51,16 +51,6 @@ var lose_dialog = {
 	}
 }
 
-var player_perto := false
-var dialogo_ativo: Node = null
-var esta_atravessando := false
-var atravessou_com_sucesso := false
-var tempo_animacao := 0.0
-var walk_speed := 10.0
-var target_y := 75.0 # Posição do outro lado da calçada (global)
-
-@onready var collision_body: StaticBody2D = $StaticBody2D
-
 var thanks_dialog = {
 	0:{
 		"faceset": "res://icon.svg",
@@ -78,6 +68,14 @@ var thanks_dialog = {
 		"title": "Senhor"
 	}
 }
+
+var player_perto := false
+var dialogo_ativo: Node = null
+var esta_atravessando := false
+var atravessou_com_sucesso := false
+var tempo_animacao := 0.0
+var walk_speed := 10.0
+var target_y := 75.0 # Posição do outro lado da calçada (global)
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -116,8 +114,11 @@ func _on_thanks_finished() -> void:
 	dialogo_ativo = null
 	Global.tem_placa_mae = true
 	Global.pecas_coletadas += 1
-	# Volta para o lobby
-	get_tree().change_scene_to_file("res://Fases/FaseInicial.tscn")
+	# Usa o sistema de carregamento do Global se disponível, ou volta direto
+	if Global.has_method("carregar_fase"):
+		Global.carregar_fase("res://Fases/FaseInicial.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Fases/FaseInicial.tscn")
 
 func _process_walk(delta: float) -> void:
 	tempo_animacao += delta
@@ -151,23 +152,20 @@ func _on_dialog_finished() -> void:
 func _on_minigame_finished(success: bool) -> void:
 	if success:
 		# Notifica o TrafficManager e remove a barreira
-		var level: Node2D = get_tree().current_scene
+		var level: Node2D = get_tree().current_scene as Node2D
 		if level.has_node("TrafficManager"):
 			level.get_node("TrafficManager").stop_spawning()
 		if level.has_node("CrosswalkBarrier"):
 			level.get_node("CrosswalkBarrier").queue_free()
 
 	var result_dialog = win_dialog if success else lose_dialog
-	
 	dialogo_ativo = DIALOG_SCREEN.instantiate()
 	dialogo_ativo.data = result_dialog
-	
 	dialogo_ativo.tree_exited.connect(func():
 		dialogo_ativo = null
 		if success:
 			_iniciar_travessia()
 	)
-	
 	hud.add_child(dialogo_ativo)
 
 func _iniciar_travessia() -> void:
@@ -181,10 +179,10 @@ func _iniciar_travessia() -> void:
 	esta_atravessando = true
 	tempo_animacao = 0.0
 
-func _on_body_entered(body):
+func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player_perto = true
 
-func _on_body_exited(body):
+func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		player_perto = false

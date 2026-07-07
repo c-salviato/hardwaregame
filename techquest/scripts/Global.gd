@@ -11,3 +11,11 @@ var dialogo_pai_feito: bool = false
 
 # Itens específicos coletados
 var tem_placa_mae: bool = false
+# Sistema de carregamento
+var cena_destino: String = ""
+var icone_peca: String = ""
+
+func carregar_fase(path: String, icone_path: String = "") -> void:
+	cena_destino = path
+	icone_peca = icone_path
+	get_tree().change_scene_to_file("res://EstruturasTSCN/TelaCarregamento.tscn")

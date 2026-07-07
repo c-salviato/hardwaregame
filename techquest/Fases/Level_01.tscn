@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://brxhtj0f3lp5p" path="res://assets/sprites/cenas/level01/rua_level01.png" id="1_n6sch"]
 [ext_resource type="Script" uid="uid://ckthv0iplhm21" path="res://scripts/player/player.gd" id="2_ruxot"]
 [ext_resource type="Texture2D" uid="uid://ueqrbee0c2vy" path="res://assets/sprites/player/animacoes_player.png" id="3_qqa7j"]
-[ext_resource type="Script" uid="uid://dxk3s8orgq55y" path="res://scripts/Fase1/DialogoSenhor.gd" id="4_l856o"]
+[ext_resource type="Script" uid="uid://bhwdi3wqe7uex" path="res://scripts/Fase1/DialogoSenhor.gd" id="4_l856o"]
 [ext_resource type="Texture2D" uid="uid://biepdwsbvyufr" path="res://assets/sprites/cenas/level01/NPCs/velho/velho_idle_right.png" id="5_s2ir7"]
 [ext_resource type="Script" uid="uid://dpnwjk04fg6fh" path="res://scripts/Fase1/TrafficManager.gd" id="6_traffic"]
 
@@ -11,7 +11,10 @@
 size = Vector2(259.00586, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4h3w"]
-size = Vector2(99.375, 57)
+size = Vector2(99.375, 83.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2ir7"]
+size = Vector2(99.375, 84.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_chua2"]
 size = Vector2(266, 5.5)
@@ -139,7 +142,7 @@ size = Vector2(30, 23)
 size = Vector2(20, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_barrier"]
-size = Vector2(40, 60)
+size = Vector2(49, 60)
 
 [node name="Level01" type="Node2D" unique_id=1451669669]
 
@@ -155,12 +158,12 @@ position = Vector2(-0.50292206, -56)
 shape = SubResource("RectangleShape2D_5pep1")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="RuaLevel01/StaticBody2D" unique_id=834705552]
-position = Vector2(-76.625, 19.5)
+position = Vector2(-76.625, 11.125)
 shape = SubResource("RectangleShape2D_x4h3w")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="RuaLevel01/StaticBody2D" unique_id=782975404]
-position = Vector2(84, 19)
-shape = SubResource("RectangleShape2D_x4h3w")
+position = Vector2(84, 10.75)
+shape = SubResource("RectangleShape2D_s2ir7")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="RuaLevel01/StaticBody2D" unique_id=1135423508]
 position = Vector2(0, 86)
@@ -175,7 +178,7 @@ position = Vector2(131.00002, 25)
 shape = SubResource("RectangleShape2D_kvphc")
 
 [node name="Player" type="CharacterBody2D" parent="RuaLevel01" unique_id=108751483 groups=["player"]]
-position = Vector2(97, 77)
+position = Vector2(89, 83)
 script = ExtResource("2_ruxot")
 
 [node name="Animacao" type="AnimatedSprite2D" parent="RuaLevel01/Player" unique_id=1818760181]
@@ -214,4 +217,5 @@ script = ExtResource("6_traffic")
 position = Vector2(127, 125)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CrosswalkBarrier" unique_id=2010012778]
+position = Vector2(4.5, 0)
 shape = SubResource("RectangleShape2D_barrier")

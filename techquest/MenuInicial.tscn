@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://c7v8w4y6n2m1"]
+
+[ext_resource type="Texture2D" uid="uid://bnwjits8m7g70" path="res://assets/sprites/cenas/fundo_menu.png" id="2_m7fwm"]
+[ext_resource type="Script" uid="uid://dypkc8v1phr05" path="res://scripts/MenuInicial.gd" id="2_script"]
+[ext_resource type="FontFile" uid="uid://cj7wrueluxhy7" path="res://fontes/Peaberry-Font-v2.0/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/PeaberryBase.ttf" id="3_cf7w3"]
+
+[node name="MenuInicial" type="Control" unique_id=1527430911]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1218296152]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_m7fwm")
+expand_mode = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="." unique_id=974606597]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -21.0
+offset_right = -21.0
+offset_bottom = 51.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Jogar" type="Button" parent="ButtonContainer" unique_id=2060428401]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_cf7w3")
+theme_override_font_sizes/font_size = 12
+text = "Jogar"
+
+[node name="Creditos" type="Button" parent="ButtonContainer" unique_id=1845619392]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_cf7w3")
+theme_override_font_sizes/font_size = 12
+text = "Créditos"
+
+[node name="CreditsPanel" type="Panel" parent="." unique_id=216188279]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -70.0
+offset_right = 110.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsLabel" type="Label" parent="CreditsPanel" unique_id=1297013131]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "Alisson Gabriel Borba - Roteirista & Artista Conceitual
+Allan Finoketti - Redator Técnico & Desenvolvedor
+Caique Souza Salviato - Artista Conceitual & Desenvolvedor
+Diego - Artista Conceitual"
+autowrap_mode = 3
+
+[node name="CloseCredits" type="Button" parent="CreditsPanel" unique_id=707938242]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "Fechar"
+
+[connection signal="pressed" from="ButtonContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="ButtonContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="CreditsPanel/CloseCredits" to="." method="_on_close_credits_pressed"]

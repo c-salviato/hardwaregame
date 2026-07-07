@@ -30,9 +30,16 @@ func _process(_delta):
 	if player_inside and Input.is_action_just_pressed("interagir"):
 		# Instancia a tela de seleção por cima da cena atual
 		var tela = destination_scene.instantiate()
+		# Conecta o sinal de troca de fase para usar o sistema de carregamento
+		if tela.has_signal("fase_selecionada"):
+			tela.fase_selecionada.connect(_on_fase_selecionada)
 		canvas.add_child(tela)
 		# Pausa o jogo assim que a tela de seleção aparecer
 		get_tree().paused = true
+
+func _on_fase_selecionada(fase_path: String, icone_path: String):
+	get_tree().paused = false
+	Global.carregar_fase(fase_path, icone_path)
 
 func _on_body_entered(body: Node2D):
 	print("entrou: ", body.name)
