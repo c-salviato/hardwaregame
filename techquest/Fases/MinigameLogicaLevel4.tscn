@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://dkhbwh8q73h5k"]
+
+[ext_resource type="Script" uid="uid://dwfjpev8eb5rw" path="res://scripts/Fase4/MinigameLogicaLevel4.gd" id="1_hw78t"]
+[ext_resource type="Script" uid="uid://jsyldpfkcbwl" path="res://scripts/Fase1/TargetSlot.gd" id="2_hw78t"]
+[ext_resource type="Script" uid="uid://dxyqtlldgo4tn" path="res://scripts/Fase1/DraggableOption.gd" id="3_hw78t"]
+
+[node name="MinigameLogicaLevel4" type="Control" unique_id=988807124]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hw78t")
+
+[node name="Background" type="ColorRect" parent="." unique_id=825090108]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="Card1" type="Panel" parent="." unique_id=434973503]
+custom_minimum_size = Vector2(240, 36)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 20.0
+offset_right = 128.0
+offset_bottom = 60.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card1" unique_id=1720004363]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -16.0
+offset_right = 111.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LabelAntes" type="Label" parent="Card1/HBoxContainer" unique_id=1689274184]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "A pia"
+
+[node name="slot1" type="Panel" parent="Card1/HBoxContainer" unique_id=1437540232]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 24)
+layout_mode = 2
+script = ExtResource("2_hw78t")
+
+[node name="Label" type="Label" parent="Card1/HBoxContainer/slot1" unique_id=20098942]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelDepois" type="Label" parent="Card1/HBoxContainer" unique_id=81649053]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "o vaso"
+
+[node name="Card2" type="Panel" parent="." unique_id=722421683]
+custom_minimum_size = Vector2(240, 36)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 80.0
+offset_right = 128.0
+offset_bottom = 120.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card2" unique_id=1404620263]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -16.0
+offset_right = 111.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Card2/HBoxContainer" unique_id=796470750]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Estão quebrados ="
+
+[node name="slot2" type="Panel" parent="Card2/HBoxContainer" unique_id=154107316]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 24)
+layout_mode = 2
+script = ExtResource("2_hw78t")
+
+[node name="Label" type="Label" parent="Card2/HBoxContainer/slot2" unique_id=411961660]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="HBoxContainer" parent="." unique_id=1528286405]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -40.0
+offset_right = 140.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="E" type="Label" parent="Options" unique_id=1470947057]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 12
+text = "E"
+script = ExtResource("3_hw78t")
+value = "E"
+
+[node name="OU" type="Label" parent="Options" unique_id=1026060738]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 12
+text = "OU"
+script = ExtResource("3_hw78t")
+value = "OU"
+
+[node name="Verdadeiro" type="Label" parent="Options" unique_id=1051317552]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 12
+text = "Verdadeiro"
+script = ExtResource("3_hw78t")
+value = "Verdadeiro"
+
+[node name="Falso" type="Label" parent="Options" unique_id=449867514]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 12
+text = "Falso"
+script = ExtResource("3_hw78t")
+value = "Falso"
+
+[node name="Feedback" type="Label" parent="." unique_id=334953558]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -40.0
+offset_right = 100.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Aperte Espaço para confirmar"
+horizontal_alignment = 1

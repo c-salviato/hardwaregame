@@ -1,0 +1,266 @@
+[gd_scene format=3 uid="uid://2krhajl5yaem"]
+
+[ext_resource type="Texture2D" uid="uid://bwrbxpcb7e437" path="res://assets/sprites/cenas/level04/banheiro_level04.png" id="1_a5qko"]
+[ext_resource type="Texture2D" uid="uid://b2ch5d1aqn1s" path="res://assets/sprites/cenas/level04/objetos_de_cena/sprite_vaso quebrado.png" id="2_ebiog"]
+[ext_resource type="Texture2D" uid="uid://58rtiqt3oa47" path="res://assets/sprites/cenas/level04/objetos_de_cena/sprite_pia_quebrada.png" id="3_gba17"]
+[ext_resource type="Script" uid="uid://ckthv0iplhm21" path="res://scripts/player/player.gd" id="4_nk41f"]
+[ext_resource type="Texture2D" uid="uid://ueqrbee0c2vy" path="res://assets/sprites/player/animacoes_player.png" id="5_yww6w"]
+[ext_resource type="Script" uid="uid://d2y14lfnfalkh" path="res://scripts/Fase4/Level_04_Controller.gd" id="6_p5r3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk41f"]
+size = Vector2(24, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yww6w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_de3ew"]
+load_path = "res://.godot/imported/zelador_baixo.png-91418bfa54b6dc2fae877451e8fd087f.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_705kn"]
+size = Vector2(31, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wlg0"]
+size = Vector2(14, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjp77"]
+size = Vector2(33, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm6c1"]
+size = Vector2(28.5, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4j3qe"]
+size = Vector2(7, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27r8x"]
+size = Vector2(5.5, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4swc"]
+size = Vector2(95.875, 4.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnnvt"]
+size = Vector2(131.9375, 4.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc0fx"]
+size = Vector2(6, 42.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nowou"]
+size = Vector2(4.375, 42.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5nh6"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el0s4"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpre3"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpnvy"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4to0"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwvlm"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k1sm"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51ff2"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b87gc"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wwro"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkkuo"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buxgs"]
+atlas = ExtResource("5_yww6w")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_de3ew"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5nh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el0s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpre3")
+}],
+"loop": true,
+"name": &"andar_baixo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpnvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4to0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwvlm")
+}],
+"loop": true,
+"name": &"andar_cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k1sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51ff2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b87gc")
+}],
+"loop": true,
+"name": &"andar_dir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wwro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkkuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buxgs")
+}],
+"loop": true,
+"name": &"andar_esq",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr6sc"]
+size = Vector2(13.5, 24.5)
+
+[node name="Level04" type="Node2D" unique_id=80357403]
+script = ExtResource("6_p5r3k")
+
+[node name="BanheiroLevel04" type="Sprite2D" parent="." unique_id=1166484204]
+position = Vector2(128, 96)
+texture = ExtResource("1_a5qko")
+
+[node name="vaso" type="Area2D" parent="BanheiroLevel04" unique_id=2105591405]
+position = Vector2(-49, -9)
+
+[node name="sprite" type="Sprite2D" parent="BanheiroLevel04/vaso" unique_id=2131429452]
+texture = ExtResource("2_ebiog")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/vaso" unique_id=1890957823]
+position = Vector2(1, 3.5)
+shape = SubResource("RectangleShape2D_nk41f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BanheiroLevel04/vaso" unique_id=3992682]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/vaso/StaticBody2D" unique_id=333647369]
+shape = SubResource("RectangleShape2D_yww6w")
+
+[node name="zelador" type="Area2D" parent="BanheiroLevel04" unique_id=1412554550]
+position = Vector2(46, 21)
+
+[node name="sprite" type="Sprite2D" parent="BanheiroLevel04/zelador" unique_id=49193437]
+texture = SubResource("CompressedTexture2D_de3ew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/zelador" unique_id=1445611975]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_705kn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BanheiroLevel04/zelador" unique_id=525488688]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/zelador/StaticBody2D" unique_id=65378097]
+shape = SubResource("RectangleShape2D_5wlg0")
+
+[node name="pia" type="Area2D" parent="BanheiroLevel04" unique_id=690196751]
+position = Vector2(24, -18)
+
+[node name="sprite" type="Sprite2D" parent="BanheiroLevel04/pia" unique_id=328721874]
+texture = ExtResource("3_gba17")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/pia" unique_id=89105701]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_bjp77")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BanheiroLevel04/pia" unique_id=399964379]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/pia/StaticBody2D" unique_id=401747708]
+position = Vector2(-0.25, -4.5)
+shape = SubResource("RectangleShape2D_lm6c1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BanheiroLevel04" unique_id=115197996]
+position = Vector2(-76, -73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/StaticBody2D" unique_id=877548198]
+position = Vector2(6.5, 72.5)
+shape = SubResource("RectangleShape2D_4j3qe")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="BanheiroLevel04" unique_id=2083545680]
+position = Vector2(-76, -73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/StaticBody2D2" unique_id=312424503]
+position = Vector2(146.25, 73)
+shape = SubResource("RectangleShape2D_27r8x")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="BanheiroLevel04" unique_id=861223294]
+position = Vector2(-76, -73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/StaticBody2D3" unique_id=1924389008]
+position = Vector2(93.9375, 42.875)
+shape = SubResource("RectangleShape2D_x4swc")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="BanheiroLevel04" unique_id=886996758]
+position = Vector2(-76, -73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/StaticBody2D4" unique_id=340964953]
+position = Vector2(77.03125, 151)
+shape = SubResource("RectangleShape2D_nnnvt")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="BanheiroLevel04" unique_id=819256721]
+position = Vector2(-76, -73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/StaticBody2D5" unique_id=916534945]
+position = Vector2(43, 66.125)
+shape = SubResource("RectangleShape2D_dc0fx")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="BanheiroLevel04" unique_id=937160770]
+position = Vector2(-76, -73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanheiroLevel04/StaticBody2D6" unique_id=1323824152]
+position = Vector2(13.1875, 66)
+shape = SubResource("RectangleShape2D_nowou")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=54720564 groups=["player"]]
+position = Vector2(82, 155)
+script = ExtResource("4_nk41f")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="Player" unique_id=535622823]
+texture_filter = 1
+position = Vector2(0, 4.172325e-07)
+scale = Vector2(0.9375, 0.97265625)
+sprite_frames = SubResource("SpriteFrames_de3ew")
+animation = &"andar_baixo"
+
+[node name="Colisao" type="CollisionShape2D" parent="Player" unique_id=684897673]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_vr6sc")

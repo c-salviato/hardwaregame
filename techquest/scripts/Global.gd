@@ -12,6 +12,7 @@ var dialogo_pai_feito: bool = false
 # Itens específicos coletados
 var tem_placa_mae: bool = false
 var tem_processador: bool = false
+var tem_hd: bool = false
 # Sistema de carregamento
 var cena_destino: String = ""
 var icone_peca: String = ""

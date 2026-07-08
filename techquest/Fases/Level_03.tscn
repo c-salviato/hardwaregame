@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bd44pteu5ut6l"]
 
-[ext_resource type="Texture2D" uid="uid://b4plkbryrpw72" path="res://assets/sprites/cenas/level03/estadio.png" id="1_hhrrg"]
+[ext_resource type="Texture2D" uid="uid://b4plkbryrpw72" path="res://assets/sprites/cenas/level03/estadio_level03.png" id="1_hhrrg"]
 [ext_resource type="Texture2D" uid="uid://ckpvmy0fiuaqk" path="res://assets/sprites/cenas/level03/NPCs/goleiro/goleiro_em_pe_32x32.png" id="2_qfywt"]
 [ext_resource type="Texture2D" uid="uid://bpwr76xk4ykyp" path="res://assets/sprites/cenas/level03/NPCs/tecnico/tecnico_32x32.png" id="3_ff37v"]
 [ext_resource type="Texture2D" uid="uid://cd55u80a7y2cp" path="res://assets/sprites/cenas/level03/objetos de cena/bola_32x32.png" id="4_ff37v"]
@@ -136,75 +136,115 @@ size = Vector2(15, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qql3u"]
 size = Vector2(20, 12)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpi8x"]
+size = Vector2(4, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83adp"]
+size = Vector2(4, 191.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tklal"]
+size = Vector2(255.75, 6.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrdbi"]
+size = Vector2(255.75, 4.25)
+
 [node name="Level03" type="Node2D" unique_id=677386187]
 script = ExtResource("6_controller")
 
-[node name="Gol" type="Sprite2D" parent="." unique_id=1284495253]
+[node name="estadio" type="Sprite2D" parent="." unique_id=1284495253]
 position = Vector2(128, 96)
 texture = ExtResource("1_hhrrg")
 
-[node name="goleiro" type="Area2D" parent="Gol" unique_id=1951341978]
+[node name="goleiro" type="Area2D" parent="estadio" unique_id=1951341978]
 
-[node name="goleiroSprite" type="Sprite2D" parent="Gol/goleiro" unique_id=2044856005]
+[node name="goleiroSprite" type="Sprite2D" parent="estadio/goleiro" unique_id=2044856005]
 position = Vector2(-1, -58)
 texture = ExtResource("2_qfywt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/goleiro" unique_id=854567127]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estadio/goleiro" unique_id=854567127]
 position = Vector2(-1.5, -53.375)
 shape = SubResource("RectangleShape2D_cs6w3")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Gol/goleiro" unique_id=1452749135]
+[node name="StaticBody2D" type="StaticBody2D" parent="estadio/goleiro" unique_id=1452749135]
 position = Vector2(-1, -61)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/goleiro/StaticBody2D" unique_id=565415069]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estadio/goleiro/StaticBody2D" unique_id=565415069]
 position = Vector2(-0.375, 3)
 shape = SubResource("RectangleShape2D_yayu6")
 
-[node name="tecnico" type="Area2D" parent="Gol" unique_id=2070959608]
+[node name="tecnico" type="Area2D" parent="estadio" unique_id=2070959608]
 position = Vector2(-94, 105)
 
-[node name="tecnicoSprite" type="Sprite2D" parent="Gol/tecnico" unique_id=267470341]
+[node name="tecnicoSprite" type="Sprite2D" parent="estadio/tecnico" unique_id=267470341]
 position = Vector2(-1, -58)
 texture = ExtResource("3_ff37v")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/tecnico" unique_id=368337375]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estadio/tecnico" unique_id=368337375]
 position = Vector2(4, -57)
 shape = SubResource("RectangleShape2D_i7cx7")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Gol/tecnico" unique_id=1923592259]
+[node name="StaticBody2D" type="StaticBody2D" parent="estadio/tecnico" unique_id=1923592259]
 position = Vector2(2, -57)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/tecnico/StaticBody2D" unique_id=21698751]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estadio/tecnico/StaticBody2D" unique_id=21698751]
 position = Vector2(-4, -2.5)
 shape = SubResource("RectangleShape2D_bkc32")
 
-[node name="bola" type="Area2D" parent="Gol" unique_id=1523789638]
+[node name="bola" type="Area2D" parent="estadio" unique_id=1523789638]
 position = Vector2(-82, 58)
 
-[node name="Sprite2D" type="Sprite2D" parent="Gol/bola" unique_id=419075316]
+[node name="Sprite2D" type="Sprite2D" parent="estadio/bola" unique_id=419075316]
 texture = ExtResource("4_ff37v")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/bola" unique_id=1130316026]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estadio/bola" unique_id=1130316026]
 shape = SubResource("RectangleShape2D_ff37v")
 
-[node name="Player" type="CharacterBody2D" parent="Gol" unique_id=919727952 groups=["player"]]
+[node name="Player" type="CharacterBody2D" parent="estadio" unique_id=919727952 groups=["player"]]
 position = Vector2(-6, 76)
 script = ExtResource("4_qql3u")
 
-[node name="Animacao" type="AnimatedSprite2D" parent="Gol/Player" unique_id=1178909860]
+[node name="Animacao" type="AnimatedSprite2D" parent="estadio/Player" unique_id=1178909860]
 texture_filter = 1
 position = Vector2(5.9999995, 6)
 scale = Vector2(0.9375, 0.97265625)
 sprite_frames = SubResource("SpriteFrames_83adp")
 animation = &"andar_baixo"
 
-[node name="Colisao" type="CollisionShape2D" parent="Gol/Player" unique_id=750896756]
+[node name="Colisao" type="CollisionShape2D" parent="estadio/Player" unique_id=750896756]
 position = Vector2(6, 7)
 shape = SubResource("RectangleShape2D_meqde")
 
-[node name="area_do_penalti" type="Area2D" parent="Gol" unique_id=1937271569]
+[node name="area_do_penalti" type="Area2D" parent="estadio" unique_id=1937271569]
 position = Vector2(-1, 60)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/area_do_penalti" unique_id=585156679]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estadio/area_do_penalti" unique_id=585156679]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_qql3u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="estadio" unique_id=1857875626]
+position = Vector2(-138, -85)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estadio/StaticBody2D" unique_id=114348863]
+position = Vector2(8, 85)
+shape = SubResource("RectangleShape2D_mpi8x")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="estadio" unique_id=1716236614]
+position = Vector2(-138, -85)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estadio/StaticBody2D2" unique_id=268855184]
+position = Vector2(268, 84.75)
+shape = SubResource("RectangleShape2D_83adp")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="estadio" unique_id=1720184206]
+position = Vector2(-138, -85)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estadio/StaticBody2D3" unique_id=72496569]
+position = Vector2(138.125, -12.0625)
+shape = SubResource("RectangleShape2D_tklal")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="estadio" unique_id=492764887]
+position = Vector2(-138, -85)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estadio/StaticBody2D4" unique_id=395211139]
+position = Vector2(138, 183)
+shape = SubResource("RectangleShape2D_mrdbi")
