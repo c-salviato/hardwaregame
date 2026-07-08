@@ -28,6 +28,8 @@ func _ready():
 #toda essa função é pra quando tiver a fase conectada
 func _process(_delta):
 	if player_inside and Input.is_action_just_pressed("interagir"):
+		# Para o som de andar ao pausar para a seleção de fase
+		Global.stop_walking_sound()
 		# Instancia a tela de seleção por cima da cena atual
 		var tela = destination_scene.instantiate()
 		# Conecta o sinal de troca de fase para usar o sistema de carregamento

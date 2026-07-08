@@ -57,6 +57,8 @@ func verificar_e_interagir():
 	elif Global.pecas_coletadas > Global.pecas_colocadas:
 		# O jogador tem mais peças coletadas do que colocadas (ou seja, tem peça nova no inventário)
 		Global.pecas_colocadas += 1 # Registra que a peça foi colocada
+		# Toca o som de peça sendo montada
+		Global.play_pecas_montando()
 		dados_dialogo = obter_dialogo_peca(Global.pecas_colocadas)
 		
 	else:

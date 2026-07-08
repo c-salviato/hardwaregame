@@ -16,11 +16,15 @@ var _is_typing: bool = false
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	# Para o som de andar ao pausar para o diálogo
+	Global.stop_walking_sound()
 	get_tree().paused = true
 	_inicia_dialogo()
 
 func _exit_tree() -> void:
 	get_tree().paused = false
+	# Garante que o som de fala pare ao sair
+	Global.stop_dialog_sound()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interagir"):
@@ -47,15 +51,22 @@ func _inicia_dialogo() -> void:
 	_dialogo.visible_characters = 0
 	_is_typing = true
 	
+	# Inicia som de NPC falando durante a digitação
+	Global.start_dialog_sound()
+	
 	# Loop para mostrar os caracteres um por um
 	while _dialogo.visible_ratio < 1:
 		if not _is_typing: # Interrompido pelo clique
 			break
 		await get_tree().create_timer(_step).timeout
 		if not is_inside_tree(): # Prevenção de erro se o node for deletado
+			Global.stop_dialog_sound()
 			return
 		_dialogo.visible_characters += 1
 	
 	_dialogo.visible_ratio = 1 # Garante que está 100% visível
 	_is_typing = false
+	
+	# Para o som de fala quando a frase termina de ser digitada
+	Global.stop_dialog_sound()
 		

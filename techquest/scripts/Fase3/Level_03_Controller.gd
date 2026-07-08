@@ -7,12 +7,12 @@ const PORTRAIT_TECNICO_NORMAL = "res://assets/sprites/cenas/level03/NPCs/tecnico
 const PORTRAIT_TECNICO_FELIZ = "res://assets/sprites/cenas/level03/NPCs/tecnico/tecnico_feliz.png"
 const SPRITE_GOLEIRO_DEITADO = "res://assets/sprites/cenas/level03/NPCs/goleiro/goleiro_deitado_32x32.png"
 
-@onready var tecnico: Area2D = $Gol/tecnico
-@onready var goleiro_sprite: Sprite2D = $Gol/goleiro/goleiroSprite
-@onready var bola: Area2D = $Gol/bola
-@onready var area_penalti: Area2D = $Gol/area_do_penalti
-@onready var player: CharacterBody2D = $Gol/Player
-@onready var player_anim: AnimatedSprite2D = $Gol/Player/Animacao
+@onready var tecnico: Area2D = $estadio/tecnico
+@onready var goleiro_sprite: Sprite2D = $estadio/goleiro/goleiroSprite
+@onready var bola: Area2D = $estadio/bola
+@onready var area_penalti: Area2D = $estadio/area_do_penalti
+@onready var player: CharacterBody2D = $estadio/Player
+@onready var player_anim: AnimatedSprite2D = $estadio/Player/Animacao
 
 var hud: CanvasLayer
 var penalty_highlight: ColorRect

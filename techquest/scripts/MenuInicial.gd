@@ -4,6 +4,8 @@ extends Control
 
 func _ready() -> void:
 	credits_panel.hide()
+	# Inicia música do menu
+	Global.play_menu_music()
 
 func _on_jogar_pressed() -> void:
 	Global.carregar_fase("res://Fases/FaseInicial.tscn")

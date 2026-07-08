@@ -103,6 +103,11 @@ func _open_minigame() -> void:
 	hud.add_child(minigame)
 
 func _on_minigame_finished(result: String) -> void:
+	# Aguarda um frame para garantir que o minigame foi completamente removido da árvore
+	# antes de mostrar o diálogo de resultado. Isso evita que o _exit_tree() do minigame
+	# (que chama get_tree().paused = false) sobrescreva o pause do diálogo.
+	await get_tree().process_frame
+
 	match result:
 		"success":
 			_consertar_tudo()
