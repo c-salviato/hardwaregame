@@ -1,3 +1,373 @@
 [gd_scene format=3 uid="uid://dhs4jigvme8tt"]
 
+[ext_resource type="Texture2D" uid="uid://cubvfbvuassdr" path="res://assets/sprites/cenas/level05/cenario_minerios.png" id="1_2xgo5"]
+[ext_resource type="Texture2D" uid="uid://bl2s0pnpy6fmk" path="res://assets/sprites/cenas/level05/NPCs/trabalhador_32x32.png" id="2_ol7uq"]
+[ext_resource type="Texture2D" uid="uid://tbrtkbi650h7" path="res://assets/sprites/cenas/level05/objetos_de_cena/camionete.png" id="3_xwugv"]
+[ext_resource type="Script" uid="uid://ckthv0iplhm21" path="res://scripts/player/player.gd" id="4_rjp8m"]
+[ext_resource type="Texture2D" uid="uid://ueqrbee0c2vy" path="res://assets/sprites/player/animacoes_player.png" id="5_8n44x"]
+[ext_resource type="Script" uid="uid://b6bdswl0acuuu" path="res://scripts/Fase5/Level_05_Controller.gd" id="6_abcde"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gj0a7"]
+size = Vector2(27, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dw58"]
+size = Vector2(13, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yowf"]
+size = Vector2(85, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxph6"]
+size = Vector2(74, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwugv"]
+size = Vector2(4, 194)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjp8m"]
+size = Vector2(4, 194)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8n44x"]
+size = Vector2(256, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rysh"]
+size = Vector2(256, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uraxh"]
+size = Vector2(12, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_228x7"]
+size = Vector2(17, 9.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frf6a"]
+size = Vector2(17, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjjo6"]
+size = Vector2(16, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iynab"]
+size = Vector2(18, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yljvo"]
+size = Vector2(14, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pvxs"]
+size = Vector2(12, 6.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y63ip"]
+size = Vector2(14, 6.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbbcp"]
+size = Vector2(17, 7.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kixoh"]
+size = Vector2(14, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fi5be"]
+size = Vector2(18, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j31nb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5nh6"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el0s4"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpre3"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpnvy"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4to0"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwvlm"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k1sm"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51ff2"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b87gc"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wwro"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkkuo"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buxgs"]
+atlas = ExtResource("5_8n44x")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rysh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5nh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el0s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpre3")
+}],
+"loop": true,
+"name": &"andar_baixo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpnvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4to0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwvlm")
+}],
+"loop": true,
+"name": &"andar_cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k1sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51ff2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b87gc")
+}],
+"loop": true,
+"name": &"andar_dir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wwro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkkuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buxgs")
+}],
+"loop": true,
+"name": &"andar_esq",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qef85"]
+size = Vector2(13.5, 24.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exefi"]
+size = Vector2(18, 7)
+
 [node name="Level05" type="Node2D" unique_id=863570099]
+script = ExtResource("6_abcde")
+
+[node name="CenarioMinerios" type="Sprite2D" parent="." unique_id=1617888158]
+position = Vector2(128, 96)
+texture = ExtResource("1_2xgo5")
+
+[node name="trabalhador" type="Area2D" parent="CenarioMinerios" unique_id=1061761764]
+position = Vector2(-102, 29)
+
+[node name="Sprite2D" type="Sprite2D" parent="CenarioMinerios/trabalhador" unique_id=693917313]
+texture = ExtResource("2_ol7uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/trabalhador" unique_id=367445547]
+position = Vector2(3.5, -1)
+shape = SubResource("RectangleShape2D_gj0a7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CenarioMinerios/trabalhador" unique_id=2048602857]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/trabalhador/StaticBody2D" unique_id=1183745469]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_7dw58")
+
+[node name="camionete" type="Area2D" parent="CenarioMinerios" unique_id=412330889]
+position = Vector2(-15, -3)
+
+[node name="Sprite2D" type="Sprite2D" parent="CenarioMinerios/camionete" unique_id=1881231694]
+texture = ExtResource("3_xwugv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/camionete" unique_id=1020977401]
+position = Vector2(-2.5, 1)
+shape = SubResource("RectangleShape2D_4yowf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CenarioMinerios/camionete" unique_id=195307173]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/camionete/StaticBody2D" unique_id=290036000]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_uxph6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CenarioMinerios" unique_id=23258252]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D" unique_id=239660459]
+position = Vector2(8, 87)
+shape = SubResource("RectangleShape2D_xwugv")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="CenarioMinerios" unique_id=629453016]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D2" unique_id=715161336]
+position = Vector2(268, 88)
+shape = SubResource("RectangleShape2D_rjp8m")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="CenarioMinerios" unique_id=166478319]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D3" unique_id=353306613]
+position = Vector2(138, -11)
+shape = SubResource("RectangleShape2D_8n44x")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="CenarioMinerios" unique_id=1469659896]
+position = Vector2(-138, 109)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D4" unique_id=41722180]
+position = Vector2(138, -11)
+shape = SubResource("RectangleShape2D_0rysh")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="CenarioMinerios" unique_id=1242279233]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D5" unique_id=178364739]
+position = Vector2(28, 22.5)
+shape = SubResource("RectangleShape2D_uraxh")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="CenarioMinerios" unique_id=1479568184]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D6" unique_id=1450668637]
+position = Vector2(81.5, 14.125)
+shape = SubResource("RectangleShape2D_228x7")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="CenarioMinerios" unique_id=726081054]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D7" unique_id=1016514312]
+position = Vector2(120.5, 8.5)
+shape = SubResource("RectangleShape2D_frf6a")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="CenarioMinerios" unique_id=665796569]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D9" unique_id=1855045914]
+position = Vector2(182, 32)
+shape = SubResource("RectangleShape2D_hjjo6")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="CenarioMinerios" unique_id=940785595]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D10" unique_id=24372905]
+position = Vector2(61, 68)
+shape = SubResource("RectangleShape2D_iynab")
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="CenarioMinerios" unique_id=110908627]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D12" unique_id=1427791968]
+position = Vector2(49, 32)
+shape = SubResource("RectangleShape2D_yljvo")
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="CenarioMinerios" unique_id=1201681929]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D13" unique_id=594817674]
+position = Vector2(50, 11.5625)
+shape = SubResource("RectangleShape2D_0pvxs")
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="CenarioMinerios" unique_id=776716445]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D14" unique_id=801258106]
+position = Vector2(25, 1.5625)
+shape = SubResource("RectangleShape2D_y63ip")
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="CenarioMinerios" unique_id=264866144]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D15" unique_id=1704073426]
+position = Vector2(234.5, 49.75)
+shape = SubResource("RectangleShape2D_lbbcp")
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="CenarioMinerios" unique_id=1414208640]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D16" unique_id=1403532131]
+position = Vector2(173, 57)
+shape = SubResource("RectangleShape2D_kixoh")
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="CenarioMinerios" unique_id=1261492450]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/StaticBody2D17" unique_id=848711628]
+position = Vector2(27, 80)
+shape = SubResource("RectangleShape2D_fi5be")
+
+[node name="ouro1" type="Area2D" parent="CenarioMinerios" unique_id=1666646615]
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="CenarioMinerios/ouro1" unique_id=72139349]
+position = Vector2(-141, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/ouro1/StaticBody2D18" unique_id=112597140]
+position = Vector2(234.5, 50)
+shape = SubResource("RectangleShape2D_lbbcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/ouro1" unique_id=1247537466]
+position = Vector2(94, 32)
+shape = SubResource("RectangleShape2D_j31nb")
+
+[node name="ouro2" type="Area2D" parent="CenarioMinerios" unique_id=296345017]
+position = Vector2(-74, -110)
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="CenarioMinerios/ouro2" unique_id=1605484738]
+position = Vector2(-141, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/ouro2/StaticBody2D18" unique_id=1764158516]
+position = Vector2(234.5, 50)
+shape = SubResource("RectangleShape2D_lbbcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioMinerios/ouro2" unique_id=1948380848]
+position = Vector2(94, 32)
+shape = SubResource("RectangleShape2D_j31nb")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1499782555 groups=["player"]]
+position = Vector2(60, 168)
+script = ExtResource("4_rjp8m")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="Player" unique_id=298252252]
+texture_filter = 1
+position = Vector2(0, 4.172325e-07)
+scale = Vector2(0.9375, 0.97265625)
+sprite_frames = SubResource("SpriteFrames_0rysh")
+animation = &"andar_baixo"
+
+[node name="Colisao" type="CollisionShape2D" parent="Player" unique_id=1704036186]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_qef85")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1531959014]
+position = Vector2(-138, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=1058467274]
+position = Vector2(338, 106.5)
+shape = SubResource("RectangleShape2D_exefi")

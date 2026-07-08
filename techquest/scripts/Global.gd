@@ -13,6 +13,7 @@ var dialogo_pai_feito: bool = false
 var tem_placa_mae: bool = false
 var tem_processador: bool = false
 var tem_hd: bool = false
+var tem_placa_de_video: bool = false
 
 # Sistema de carregamento
 var cena_destino: String = ""

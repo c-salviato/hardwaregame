@@ -55,7 +55,7 @@ text = "Os carros estão passando ="
 
 [node name="TargetSlot" type="Panel" parent="Card/HBoxContainer" unique_id=840941885]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 24)
+custom_minimum_size = Vector2(75, 24)
 layout_mode = 2
 script = ExtResource("2_m4j8q")
 
@@ -66,6 +66,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "?"
 horizontal_alignment = 1
 vertical_alignment = 1
 

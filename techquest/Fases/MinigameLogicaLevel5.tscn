@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://dg7bvfrg3bgt6"]
+
+[ext_resource type="Script" uid="uid://dje2obvc1tl6f" path="res://scripts/Fase5/MinigameLogicaLevel5.gd" id="1_qbgha"]
+[ext_resource type="Script" uid="uid://jsyldpfkcbwl" path="res://scripts/Fase1/TargetSlot.gd" id="2_vnl0t"]
+[ext_resource type="Script" uid="uid://dxyqtlldgo4tn" path="res://scripts/Fase1/DraggableOption.gd" id="3_ga5u0"]
+
+[node name="MinigameLogicaLevel5" type="Control" unique_id=1904318256]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qbgha")
+
+[node name="Background" type="ColorRect" parent="." unique_id=541245011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="Card" type="Panel" parent="." unique_id=1493969243]
+layout_mode = 0
+offset_right = 257.0
+offset_bottom = 47.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card" unique_id=408568849]
+layout_mode = 0
+offset_left = 2.5
+offset_top = 8.0
+offset_right = 254.5
+offset_bottom = 38.0
+
+[node name="Expressao" type="Label" parent="Card/HBoxContainer" unique_id=1400236197]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "A camionete precisa ser:"
+horizontal_alignment = 1
+
+[node name="TargetSlot" type="Panel" parent="Card/HBoxContainer" unique_id=383286889]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_vnl0t")
+
+[node name="Label" type="Label" parent="Card/HBoxContainer/TargetSlot" unique_id=1092873742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="HBoxContainer" parent="." unique_id=486736917]
+layout_mode = 0
+offset_left = 3.5
+offset_top = 55.0
+offset_right = 255.5
+offset_bottom = 67.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Igual" type="Label" parent="Options" unique_id=1006308522]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 12
+text = "Igual"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_ga5u0")
+value = "IGUAL"
+
+[node name="Diferente" type="Label" parent="Options" unique_id=5296369]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 12
+text = "Diferente"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_ga5u0")
+value = "DIFERENTE"
+
+[node name="Maior" type="Label" parent="Options" unique_id=41794086]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 12
+text = "Maior"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_ga5u0")
+value = "MAIOR"
+
+[node name="Menor" type="Label" parent="Options" unique_id=452750864]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 12
+text = "Menor"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_ga5u0")
+value = "MENOR"
+
+[node name="Feedback" type="Label" parent="." unique_id=361051533]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -89.0
+offset_top = -36.0
+offset_right = 111.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Aperte Espaço para confirmar"
+horizontal_alignment = 1

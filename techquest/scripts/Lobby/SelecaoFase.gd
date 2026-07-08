@@ -7,7 +7,7 @@ extends Control
 	"res://Fases/Level_02.tscn",
 	"res://Fases/Level_03.tscn",
 	"res://Fases/Level_04.tscn",
-	#"res://cenario/Fase5.tscn",
+	"res://Fases/Level_05.tscn",
 	#"res://cenario/Fase6.tscn",
 ]
 
@@ -15,7 +15,7 @@ func _ready():
 	# percorre os 6 botões e conecta o clique de cada um
 	#tem que ir atualizando conforme coloca as fases
 
-	for i in range(4):
+	for i in range(fases.size()):
 		# busca o botão pelo nome — Fase1, Fase2, etc
 		var botao = get_node("FundoMenu/CenterContainer/GridContainer/Fase" + str(i + 1))
 		# conecta o sinal pressed passando o índice pra saber qual fase abrir
@@ -32,8 +32,8 @@ func _on_fase_selecionada(indice: int):
 		"res://assets/sprites/GUI/menu_portal/spritesheet_cpu.png",
 		"res://assets/sprites/GUI/menu_portal/spritesheet_ram.png",
 		"res://assets/sprites/GUI/menu_portal/spritesheet_hd.png",
-		"res://assets/sprites/GUI/menu_portal/spritesheet_gpu.png",
-		"res://assets/sprites/GUI/menu_portal/spritesheet_fonte.png"
+		"res://assets/sprites/GUI/menu_portal/spritesheet_fonte.png",
+		"res://assets/sprites/GUI/menu_portal/spritesheet_gpu.png"
 	]
 	
 	var icone = ""

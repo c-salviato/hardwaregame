@@ -29,9 +29,8 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -128.0
-offset_top = 20.0
 offset_right = 128.0
-offset_bottom = 60.0
+offset_bottom = 40.0
 grow_horizontal = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Card1" unique_id=1720004363]
@@ -67,6 +66,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -82,9 +82,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -128.0
-offset_top = 80.0
+offset_top = 40.0
 offset_right = 128.0
-offset_bottom = 120.0
+offset_bottom = 80.0
 grow_horizontal = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Card2" unique_id=1404620263]
@@ -109,7 +109,7 @@ text = "Estão quebrados ="
 
 [node name="slot2" type="Panel" parent="Card2/HBoxContainer" unique_id=154107316]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 24)
+custom_minimum_size = Vector2(90, 24)
 layout_mode = 2
 script = ExtResource("2_hw78t")
 
@@ -120,6 +120,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -131,9 +132,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -140.0
-offset_top = -40.0
+offset_top = -15.0
 offset_right = 140.0
-offset_bottom = -18.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
