@@ -5,7 +5,7 @@ extends Control
 @export var fases: Array[String] = [
 	"res://Fases/Level_01.tscn",
 	"res://Fases/Level_02.tscn",
-	#"res://cenario/Fase3.tscn",
+	"res://Fases/Level_03.tscn",
 	#"res://cenario/Fase4.tscn",
 	#"res://cenario/Fase5.tscn",
 	#"res://cenario/Fase6.tscn",
@@ -15,7 +15,7 @@ func _ready():
 	# percorre os 6 botões e conecta o clique de cada um
 	#tem que ir atualizando conforme coloca as fases
 
-	for i in range(2):
+	for i in range(3):
 		# busca o botão pelo nome — Fase1, Fase2, etc
 		var botao = get_node("FundoMenu/CenterContainer/GridContainer/Fase" + str(i + 1))
 		# conecta o sinal pressed passando o índice pra saber qual fase abrir

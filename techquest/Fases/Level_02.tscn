@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c57to3p85bjy4" path="res://assets/sprites/cenas/level02/objetos de cena/arvore.png" id="2_823xq"]
 [ext_resource type="Texture2D" uid="uid://n1pqtndkbxf6" path="res://assets/sprites/cenas/level02/NPCs/sprite_gato.png" id="2_c3equ"]
 [ext_resource type="Texture2D" uid="uid://ueqrbee0c2vy" path="res://assets/sprites/player/animacoes_player.png" id="3_c3equ"]
+[ext_resource type="Texture2D" uid="uid://d1c77ampfiarr" path="res://assets/sprites/cenas/level02/NPCs/criancinha_in_game 32x32.png" id="6_qotjd"]
+[ext_resource type="Script" uid="uid://cpgxoihr01gpg" path="res://scripts/Fase2/NPC_level2.gd" id="7_v0hmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_os64f"]
 size = Vector2(107, 24)
@@ -26,8 +28,6 @@ size = Vector2(7.5, 197)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pr7bk"]
 size = Vector2(262, 5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pve6d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q5nh6"]
 atlas = ExtResource("3_c3equ")
@@ -139,6 +139,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cupv3"]
 size = Vector2(13.5, 24.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pve6d"]
+size = Vector2(25, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmbqf"]
+size = Vector2(14, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8bcd"]
+size = Vector2(22, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oepp6"]
+size = Vector2(14, 24)
+
 [node name="Level02" type="Node2D" unique_id=1025939950]
 
 [node name="ParqueLevel02" type="Sprite2D" parent="." unique_id=2145389767]
@@ -187,17 +199,8 @@ shape = SubResource("RectangleShape2D_moohv")
 position = Vector2(2, 97.5)
 shape = SubResource("RectangleShape2D_pr7bk")
 
-[node name="Gato" type="Area2D" parent="ParqueLevel02" unique_id=1665562287]
-position = Vector2(73, -39)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParqueLevel02/Gato" unique_id=965459791]
-shape = SubResource("RectangleShape2D_pve6d")
-
-[node name="Sprite2D" type="Sprite2D" parent="ParqueLevel02/Gato" unique_id=2025610727]
-texture = ExtResource("2_c3equ")
-
 [node name="Player" type="CharacterBody2D" parent="." unique_id=641777398 groups=["player"]]
-position = Vector2(97, 77)
+position = Vector2(127, 154)
 script = ExtResource("2_5gmv3")
 
 [node name="Animacao" type="AnimatedSprite2D" parent="Player" unique_id=1509521358]
@@ -214,3 +217,36 @@ shape = SubResource("RectangleShape2D_cupv3")
 [node name="Arvore" type="Sprite2D" parent="." unique_id=1601719634]
 position = Vector2(223, 62)
 texture = ExtResource("2_823xq")
+
+[node name="Gato" type="Area2D" parent="." unique_id=1665562287]
+position = Vector2(202, 58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gato" unique_id=965459791]
+position = Vector2(-2.5, 3.5)
+shape = SubResource("RectangleShape2D_pve6d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gato" unique_id=2025610727]
+texture = ExtResource("2_c3equ")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Gato" unique_id=278320102]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gato/StaticBody2D" unique_id=280348313]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_lmbqf")
+
+[node name="NPC_level2" type="Area2D" parent="." unique_id=825512079]
+position = Vector2(98, 84)
+script = ExtResource("7_v0hmo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_level2" unique_id=489380240]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_y8bcd")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC_level2" unique_id=1639031411]
+texture = ExtResource("6_qotjd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPC_level2" unique_id=122633213]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_level2/StaticBody2D" unique_id=2135269780]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_oepp6")

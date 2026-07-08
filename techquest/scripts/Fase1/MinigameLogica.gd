@@ -5,13 +5,17 @@ signal finished(result: bool)
 
 @onready var slot: TargetSlot = %TargetSlot
 @onready var feedback_label: Label = $Feedback
+@onready var question_label: Label = $Card/HBoxContainer/Label
 
-var correct_value: String = "Falso" # Inicialmente falso pois não há carros
+var correct_value: String = "Falso"
+var question_text: String = ""
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	feedback_label.hide()
 	slot.item_dropped.connect(_on_item_dropped)
+	if question_text != "":
+		question_label.text = question_text
 
 func _on_item_dropped(_value: String) -> void:
 	feedback_label.show()

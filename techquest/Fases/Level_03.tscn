@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://bd44pteu5ut6l"]
+
+[ext_resource type="Texture2D" uid="uid://b4plkbryrpw72" path="res://assets/sprites/cenas/level03/estadio.png" id="1_hhrrg"]
+[ext_resource type="Texture2D" uid="uid://ckpvmy0fiuaqk" path="res://assets/sprites/cenas/level03/NPCs/goleiro/goleiro_em_pe_32x32.png" id="2_qfywt"]
+[ext_resource type="Texture2D" uid="uid://bpwr76xk4ykyp" path="res://assets/sprites/cenas/level03/NPCs/tecnico/tecnico_32x32.png" id="3_ff37v"]
+[ext_resource type="Texture2D" uid="uid://cd55u80a7y2cp" path="res://assets/sprites/cenas/level03/objetos de cena/bola_32x32.png" id="4_ff37v"]
+[ext_resource type="Script" uid="uid://ckthv0iplhm21" path="res://scripts/player/player.gd" id="4_qql3u"]
+[ext_resource type="Texture2D" uid="uid://ueqrbee0c2vy" path="res://assets/sprites/player/animacoes_player.png" id="5_mpi8x"]
+[ext_resource type="Script" uid="uid://bu6uk0vox4qug" path="res://scripts/Fase3/Level_03_Controller.gd" id="6_controller"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs6w3"]
+size = Vector2(35, 32.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yayu6"]
+size = Vector2(12.75, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7cx7"]
+size = Vector2(24, 25.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkc32"]
+size = Vector2(12, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ff37v"]
+size = Vector2(7.859375, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5nh6"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el0s4"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpre3"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpnvy"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4to0"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwvlm"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k1sm"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51ff2"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b87gc"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wwro"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkkuo"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buxgs"]
+atlas = ExtResource("5_mpi8x")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_83adp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5nh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el0s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpre3")
+}],
+"loop": true,
+"name": &"andar_baixo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpnvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4to0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwvlm")
+}],
+"loop": true,
+"name": &"andar_cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k1sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51ff2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b87gc")
+}],
+"loop": true,
+"name": &"andar_dir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wwro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkkuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buxgs")
+}],
+"loop": true,
+"name": &"andar_esq",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meqde"]
+size = Vector2(15, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qql3u"]
+size = Vector2(20, 12)
+
+[node name="Level03" type="Node2D" unique_id=677386187]
+script = ExtResource("6_controller")
+
+[node name="Gol" type="Sprite2D" parent="." unique_id=1284495253]
+position = Vector2(128, 96)
+texture = ExtResource("1_hhrrg")
+
+[node name="goleiro" type="Area2D" parent="Gol" unique_id=1951341978]
+
+[node name="goleiroSprite" type="Sprite2D" parent="Gol/goleiro" unique_id=2044856005]
+position = Vector2(-1, -58)
+texture = ExtResource("2_qfywt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/goleiro" unique_id=854567127]
+position = Vector2(-1.5, -53.375)
+shape = SubResource("RectangleShape2D_cs6w3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Gol/goleiro" unique_id=1452749135]
+position = Vector2(-1, -61)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/goleiro/StaticBody2D" unique_id=565415069]
+position = Vector2(-0.375, 3)
+shape = SubResource("RectangleShape2D_yayu6")
+
+[node name="tecnico" type="Area2D" parent="Gol" unique_id=2070959608]
+position = Vector2(-94, 105)
+
+[node name="tecnicoSprite" type="Sprite2D" parent="Gol/tecnico" unique_id=267470341]
+position = Vector2(-1, -58)
+texture = ExtResource("3_ff37v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/tecnico" unique_id=368337375]
+position = Vector2(4, -57)
+shape = SubResource("RectangleShape2D_i7cx7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Gol/tecnico" unique_id=1923592259]
+position = Vector2(2, -57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/tecnico/StaticBody2D" unique_id=21698751]
+position = Vector2(-4, -2.5)
+shape = SubResource("RectangleShape2D_bkc32")
+
+[node name="bola" type="Area2D" parent="Gol" unique_id=1523789638]
+position = Vector2(-82, 58)
+
+[node name="Sprite2D" type="Sprite2D" parent="Gol/bola" unique_id=419075316]
+texture = ExtResource("4_ff37v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/bola" unique_id=1130316026]
+shape = SubResource("RectangleShape2D_ff37v")
+
+[node name="Player" type="CharacterBody2D" parent="Gol" unique_id=919727952 groups=["player"]]
+position = Vector2(-6, 76)
+script = ExtResource("4_qql3u")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="Gol/Player" unique_id=1178909860]
+texture_filter = 1
+position = Vector2(5.9999995, 6)
+scale = Vector2(0.9375, 0.97265625)
+sprite_frames = SubResource("SpriteFrames_83adp")
+animation = &"andar_baixo"
+
+[node name="Colisao" type="CollisionShape2D" parent="Gol/Player" unique_id=750896756]
+position = Vector2(6, 7)
+shape = SubResource("RectangleShape2D_meqde")
+
+[node name="area_do_penalti" type="Area2D" parent="Gol" unique_id=1937271569]
+position = Vector2(-1, 60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gol/area_do_penalti" unique_id=585156679]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_qql3u")
