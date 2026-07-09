@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://cc3raarflsbdj"]
+
+[ext_resource type="Texture2D" uid="uid://dp5j63eqbink6" path="res://assets/sprites/cenas/level06/cenario_sala_de_aula.png" id="1_dqnoj"]
+[ext_resource type="Script" uid="uid://ckthv0iplhm21" path="res://scripts/player/player.gd" id="2_6eh6r"]
+[ext_resource type="Texture2D" uid="uid://ueqrbee0c2vy" path="res://assets/sprites/player/animacoes_player.png" id="3_4dxgj"]
+[ext_resource type="Script" uid="uid://bbmvlxeu4byci" path="res://scripts/Fase6/Level_06_Controller.gd" id="4_2fxkl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m120g"]
+load_path = "res://.godot/imported/professora.png-f55297ce056bf1a014034c779e5f7bd6.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tywoo"]
+size = Vector2(20, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhstt"]
+size = Vector2(12, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5nh6"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el0s4"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpre3"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpnvy"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4to0"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwvlm"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k1sm"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51ff2"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b87gc"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wwro"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkkuo"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buxgs"]
+atlas = ExtResource("3_4dxgj")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h8fhd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5nh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el0s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpre3")
+}],
+"loop": true,
+"name": &"andar_baixo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpnvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4to0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwvlm")
+}],
+"loop": true,
+"name": &"andar_cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k1sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51ff2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b87gc")
+}],
+"loop": true,
+"name": &"andar_dir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wwro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkkuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buxgs")
+}],
+"loop": true,
+"name": &"andar_esq",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxmgx"]
+size = Vector2(13.5, 24.5)
+
+[node name="Level06" type="Node2D" unique_id=1895287922]
+script = ExtResource("4_2fxkl")
+
+[node name="CenarioSalaDeAula" type="Sprite2D" parent="." unique_id=1783049893]
+position = Vector2(128, 96)
+texture = ExtResource("1_dqnoj")
+
+[node name="Professora" type="Area2D" parent="CenarioSalaDeAula" unique_id=23294669]
+position = Vector2(-74, -37)
+
+[node name="Sprite2D" type="Sprite2D" parent="CenarioSalaDeAula/Professora" unique_id=616678909]
+texture = SubResource("CompressedTexture2D_m120g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioSalaDeAula/Professora" unique_id=127109401]
+shape = SubResource("RectangleShape2D_tywoo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CenarioSalaDeAula/Professora" unique_id=550321850]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenarioSalaDeAula/Professora/StaticBody2D" unique_id=67733615]
+position = Vector2(-1, -4)
+shape = SubResource("RectangleShape2D_fhstt")
+
+[node name="Player" type="CharacterBody2D" parent="CenarioSalaDeAula" unique_id=1182111332 groups=["player"]]
+position = Vector2(74, -39)
+script = ExtResource("2_6eh6r")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="CenarioSalaDeAula/Player" unique_id=1707037861]
+texture_filter = 1
+position = Vector2(0, 4.172325e-07)
+scale = Vector2(0.9375, 0.97265625)
+sprite_frames = SubResource("SpriteFrames_h8fhd")
+animation = &"andar_baixo"
+
+[node name="Colisao" type="CollisionShape2D" parent="CenarioSalaDeAula/Player" unique_id=1453211506]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_pxmgx")

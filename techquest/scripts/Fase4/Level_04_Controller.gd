@@ -142,8 +142,12 @@ func _iniciar_dialogo_agradecimento() -> void:
 	_start_dialog(success_dialog, _finish_level)
 
 func _finish_level() -> void:
-	Global.tem_hd = true
-	Global.pecas_coletadas += 1
+	if not Global.peca_coletada[3]:
+		Global.peca_coletada[3] = true
+		Global.tem_hd = true
+		Global.pecas_coletadas += 1
+		Global.nivel_desbloqueado = max(Global.nivel_desbloqueado, 5)
+		Global.salvar_jogo()
 	Global.carregar_fase("res://Fases/FaseInicial.tscn")
 
 func _restart_level() -> void:

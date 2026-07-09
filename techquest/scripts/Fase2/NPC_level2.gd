@@ -97,8 +97,12 @@ func _iniciar_dialogo_agradecimento() -> void:
 
 func _on_thanks_finished() -> void:
 	dialogo_ativo = null
-	Global.tem_processador = true
-	Global.pecas_coletadas += 1
+	if not Global.peca_coletada[1]:
+		Global.peca_coletada[1] = true
+		Global.tem_processador = true
+		Global.pecas_coletadas += 1
+		Global.nivel_desbloqueado = max(Global.nivel_desbloqueado, 3)
+		Global.salvar_jogo()
 	Global.carregar_fase("res://Fases/FaseInicial.tscn")
 
 func _on_dialog_finished() -> void:
@@ -127,7 +131,7 @@ func _salvar_gato() -> void:
 	var gato = get_tree().current_scene.get_node_or_null("Gato")
 	if gato:
 		# Teleporta o gato para o lado da criança
-		gato.global_position = global_position + Vector2(20, 0)
+		gato.global_position = global_position + Vector2(-30, 0)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

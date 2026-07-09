@@ -240,8 +240,12 @@ func _reiniciar_fase() -> void:
 # ─── Finalizar Fase (MAIOR) ───────────────────────────────────────────────────
 
 func _finalizar_fase() -> void:
-	Global.tem_placa_de_video = true
-	Global.pecas_coletadas += 1
+	if not Global.peca_coletada[4]:
+		Global.peca_coletada[4] = true
+		Global.tem_placa_de_video = true
+		Global.pecas_coletadas += 1
+		Global.nivel_desbloqueado = max(Global.nivel_desbloqueado, 6)
+		Global.salvar_jogo()
 	Global.carregar_fase("res://Fases/FaseInicial.tscn")
 
 

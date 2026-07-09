@@ -137,7 +137,7 @@ func _on_penalty_area_exited(body: Node2D) -> void:
 
 func _open_logic_minigame() -> void:
 	var minigame = MINIGAME_LOGICA.instantiate()
-	minigame.question_text = "Bater o pênalti: Chutar ___ Cabecear"
+	minigame.question_text = "Pênalti: Chutar _ Cabecear"
 	minigame.correct_value = "OU"
 	
 	var options = minigame.get_node("Options")
@@ -216,7 +216,11 @@ func _on_goal_scored() -> void:
 
 func _finish_level() -> void:
 	var g: Node = get_node("/root/Global")
-	g.pecas_coletadas += 1
+	if not g.peca_coletada[2]:
+		g.peca_coletada[2] = true
+		g.pecas_coletadas += 1
+		g.nivel_desbloqueado = max(g.nivel_desbloqueado, 4)
+		g.salvar_jogo()
 	g.carregar_fase("res://Fases/FaseInicial.tscn")
 
 func _perform_penalty_fail() -> void:

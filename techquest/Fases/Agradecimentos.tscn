@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bcxu42cf8dd64"]
+
+[ext_resource type="Script" uid="uid://hbwwhitdcdgv" path="res://scripts/Agradecimentos.gd" id="1_agradecimentos"]
+[ext_resource type="FontFile" uid="uid://c3ksgjhny4rqw" path="res://fontes/bookxel.ttf" id="2_bookxel"]
+[ext_resource type="FontFile" uid="uid://cj7wrueluxhy7" path="res://fontes/Peaberry-Font-v2.0/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/PeaberryBase.ttf" id="3_peaberry"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_titulo"]
+font = ExtResource("2_bookxel")
+shadow_color = Color(0, 0, 0, 0.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_instrucao"]
+font = ExtResource("3_peaberry")
+font_size = 10
+shadow_color = Color(0, 0, 0, 0.5)
+
+[node name="Agradecimentos" type="Node2D" unique_id=998891246]
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=478956580]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.043, 0.122, 0.216, 1)
+
+[node name="Control" type="Control" parent="." unique_id=1280876651]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_right = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_agradecimentos")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1192981995]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 46.0
+offset_right = 220.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="LabelTitulo" type="Label" parent="Control/VBoxContainer" unique_id=606775150]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "✨ Obrigado por ter jogado! ✨"
+label_settings = SubResource("LabelSettings_titulo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelSubtitulo" type="Label" parent="Control/VBoxContainer" unique_id=568156970]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Esperamos que tenha se divertido
+aprendendo sobre computadores!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="LabelInstrucao" type="Label" parent="Control/VBoxContainer" unique_id=182931407]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Pressione ESPAÇO para sair"
+label_settings = SubResource("LabelSettings_instrucao")
+horizontal_alignment = 1
+vertical_alignment = 1

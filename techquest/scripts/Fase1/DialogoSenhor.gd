@@ -14,22 +14,22 @@ const SPRITE_IDLE_RIGHT = preload("res://assets/sprites/cenas/level01/NPCs/velho
 
 var dialog_data = {
 	0:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/cenas/level01/NPCs/velho/velho_48-48.png",
 		"dialog": "Olá, pequeno herói!",
 		"title": "Senhor"
 	},
 	1:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/cenas/level01/NPCs/velho/velho_48-48.png",
 		"dialog": "Eu preciso atravessar a rua",
 		"title": "Senhor"
 	},
 	2:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/cenas/level01/NPCs/velho/velho_48-48.png",
 		"dialog": "mas estou com medo desses carros.",
 		"title": "Senhor"
 	},
 	3:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/cenas/level01/NPCs/velho/velho_48-48.png",
 		"dialog": "Você pode me ajudar?",
 		"title": "Senhor"
 	},
@@ -37,7 +37,7 @@ var dialog_data = {
 
 var win_dialog = {
 	0:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/cenas/level01/NPCs/velho/velho_feliz48-48.png",
 		"dialog": "Parabéns! Você acertou. Realmente não há carros passando agora.",
 		"title": "Senhor"
 	}
@@ -45,7 +45,7 @@ var win_dialog = {
 
 var lose_dialog = {
 	0:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/cenas/level01/NPCs/velho/velho_48-48.png",
 		"dialog": "Ops, acho que você se enganou no conector lógico. Tente novamente!",
 		"title": "Senhor"
 	}
@@ -53,17 +53,17 @@ var lose_dialog = {
 
 var thanks_dialog = {
 	0:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/cenas/level01/NPCs/velho/velho_feliz48-48.png",
 		"dialog": "Muito obrigado por me ajudar a atravessar!",
 		"title": "Senhor"
 	},
 	1:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/cenas/level01/NPCs/velho/velho_feliz48-48.png",
 		"dialog": "Como agradecimento, tome esta Placa Mãe para o seu computador.",
 		"title": "Senhor"
 	},
 	2:{
-		"faceset": "res://icon.svg",
+		"faceset": "res://assets/sprites/cenas/level01/NPCs/velho/velho_feliz48-48.png",
 		"dialog": "Boa sorte na sua jornada!",
 		"title": "Senhor"
 	}
@@ -112,8 +112,12 @@ func _iniciar_dialogo_agradecimento() -> void:
 
 func _on_thanks_finished() -> void:
 	dialogo_ativo = null
-	Global.tem_placa_mae = true
-	Global.pecas_coletadas += 1
+	if not Global.peca_coletada[0]:
+		Global.peca_coletada[0] = true
+		Global.tem_placa_mae = true
+		Global.pecas_coletadas += 1
+		Global.nivel_desbloqueado = max(Global.nivel_desbloqueado, 2)
+		Global.salvar_jogo()
 	# Usa o sistema de carregamento do Global se disponível, ou volta direto
 	if Global.has_method("carregar_fase"):
 		Global.carregar_fase("res://Fases/FaseInicial.tscn")
